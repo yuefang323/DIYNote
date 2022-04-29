@@ -1,4 +1,4 @@
-# solo-project
+# DIYNote
 
 
 # Technologies Used
