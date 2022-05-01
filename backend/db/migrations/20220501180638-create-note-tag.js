@@ -10,11 +10,13 @@ module.exports = {
       },
       noteId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: "Notes" }
       },
       tagId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: "Tags" }
       },
       createdAt: {
         allowNull: false,
