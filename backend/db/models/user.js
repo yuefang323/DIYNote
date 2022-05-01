@@ -51,7 +51,15 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   User.associate = function (models) {
-    // associations can be defined here
+    User.hasMany(models.Note, {
+      foreignKey: "userId",
+    });
+    User.hasMany(models.Notebook, {
+      foreignKey: "userId",
+    });
+    User.hasMany(models.Tag, {
+      foreignKey: "userId",
+    });
   };
 
   // user model methods that the API routes for authentication
