@@ -57,6 +57,9 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Notebook, {
       foreignKey: "userId",
     });
+    User.hasMany(models.Tag, {
+      foreignKey: "userId",
+    });
   };
 
   // user model methods that the API routes for authentication

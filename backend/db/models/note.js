@@ -26,6 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     Note.belongsTo(models.Notebook, {
       foreignKey: "notebookId",
     });
+    Note.hasMany(models.NoteTag, {
+      foreignKey: "noteId",
+    });
   };
   return Note;
 };
