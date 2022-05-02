@@ -1,23 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./LandingPage.css";
-import Navigation from "../Navigation";
+// import Navigation from "../Navigation";
 
 const LandingPage = ({ isLoaded }) => {
   return (
     <>
-      <div className="splash-page-container">
+      <div className="landing-page-container">
         <div className="body-text">
           <h1>DIY your notes, color your life</h1>
-
           <h3>
             Utilize the DIYnote, remember everything and tackle any project.
           </h3>
-
-          <h4>
-            {/* "Tattoos have a power and magic all their own. They decorate the
-            body but they also enhance the soul." - Michele Delio */}
-          </h4>
         </div>
       </div>
 
@@ -33,7 +27,7 @@ const LandingPage = ({ isLoaded }) => {
         </li>
       </ul>
       <Footer /> */}
-      <footer className={true ? "splash-page-footer" : "logged-in-footer"}>
+      <footer className={true ? "landing-page-footer" : "logged-in-footer"}>
         {true && (
           <ul className="foot-stuff">
             <li>Javascript</li>

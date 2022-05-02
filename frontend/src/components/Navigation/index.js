@@ -5,7 +5,7 @@ import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal"; // add modal
 import "./Navigation.css";
 import SignupFormModal from "../SignupFormModal";
-import img from "./logo.png";
+import img from "./favicon.ico";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
