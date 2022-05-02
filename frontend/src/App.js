@@ -17,12 +17,10 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/" >
-            <LandingPage />
+          <Route exact path="/">
+            <LandingPage isLoaded={isLoaded} />
           </Route>
-          <Route>
-            PageNotFound
-          </Route>
+          <Route>PageNotFound</Route>
         </Switch>
       )}
     </>

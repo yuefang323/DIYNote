@@ -5,7 +5,7 @@ import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal"; // add modal
 import "./Navigation.css";
 import SignupFormModal from "../SignupFormModal";
-// import LandingPage from "../LandingPage";
+import img from "./logo.png";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -16,22 +16,35 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
+        <SignupFormModal />
         <LoginFormModal />
-        {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );
   }
 
   return (
-    <ul>
-      <li>
-        <SignupFormModal/>
-        <NavLink exact to="/">
-          Home
-        </NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <header id={!sessionUser ? "splash-page-header" : ""}>
+      <nav className="nav-bar" id={!sessionUser ? "splash-page-nav-bar" : ""}>
+        <div className="navbar-element" id="left-container">
+          <NavLink exact to="/">
+            <img className="favicon-image" src={img} alt="DIYnote" />
+            {/* <img
+              className="inkr-logo"
+              src="/images/logotype.svg"
+              alt="inkr logo"
+            ></img> */}
+          </NavLink>
+        </div>
+
+        {/* <div className="navbar-element" id="center-container">
+          <ul className="session-links">{isLoaded && centerLink}</ul>
+        </div> */}
+
+        <div className="navbar-element" id="right-container">
+          <ul className="session-links">{isLoaded && sessionLinks}</ul>
+        </div>
+      </nav>
+    </header>
   );
 }
 

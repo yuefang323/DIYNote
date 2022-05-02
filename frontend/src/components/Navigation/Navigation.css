@@ -1,0 +1,256 @@
+header {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  background-color: var(--chocolate-fade);
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  max-height: 67px;
+  /* min-width: 1320px; */
+}
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 150px auto 500px;
+  width: 85%;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.session-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-link {
+  border-bottom: 1px solid var(--soft-white);
+}
+
+/* %%%%%%%%%%%%%%%%%%%%% NavBar Left Container %%%%%%%%%%%%%%%%%%%%% */
+
+#left-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-start;
+  width: fit-content;
+}
+
+.inkr-dots,
+.inkr-logo {
+  /* height: 21.62px; */
+  height: 25px;
+  padding: 0 2px;
+  cursor: pointer;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%% NavBar Center Container %%%%%%%%%%%%%%%%%%%%% */
+
+#center-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%% NavBar Right Container %%%%%%%%%%%%%%%%%%%%% */
+
+#right-container {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  justify-self: flex-end;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-text {
+  padding: 0 10px;
+  color: var(--soft-white);
+  cursor: default;
+  font-family: proxima-nova-condensed, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+#right-container > .session-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.right-container-element {
+  margin-left: 15px;
+}
+
+.nav-butt.right-container-element.new-post-button {
+  margin-left: 15px;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%% New Post Button %%%%%%%%%%%%%%%%%%%%% */
+
+.new-post-button.nav-butt {
+  width: fit-content;
+  margin-right: 0;
+  padding: 0;
+}
+
+.fa-cloud-upload-alt {
+  font-size: 25px;
+  transition-duration: 0.3s;
+  color: white;
+}
+
+.fa-cloud-upload-alt:hover {
+  transform: scale(1.5);
+}
+
+/* %%%%%%%%%%%%%%%%%%%%% Logout Button %%%%%%%%%%%%%%%%%%%%% */
+
+/* .logout {
+    border: none;
+    display: inline-block;
+    margin: 0;
+    background: none;
+    background-color: white;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 3px;
+
+    transition-duration: 0.2s;
+}
+
+.logout:hover {
+    color: #0000007a;
+
+    transform: scale(1.03);
+} */
+
+.logout {
+  border: none;
+  background: none;
+  color: whitesmoke;
+  font-size: 25px;
+  transition-duration: 0.3s;
+}
+
+.logout:hover {
+  transform: scale(1.5);
+  color: white;
+  cursor: pointer;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%% Navigation Links / Buttons %%%%%%%%%%%%%%%%%%%%% */
+
+.hidden-link {
+  opacity: 0;
+}
+
+.nav-butt {
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+  margin: 0;
+  color: var(--soft-white);
+
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0 25px 0 0;
+  margin-right: 15px;
+  transition-duration: 0.2s;
+}
+
+.nav-butt:hover {
+  color: white;
+  transform: scale(1.03);
+}
+
+.nav-butt.my-page-link {
+  min-width: 93.19px;
+}
+
+@media (max-width: 1350px) {
+  form.search-bar {
+    display: none;
+  }
+
+  .nav-bar {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 80vw;
+  }
+
+  #left-container {
+    min-width: 101px;
+  }
+
+  #center-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  #right-container {
+    width: fit-content;
+  }
+}
+
+/*
+
+@media (max-width: 936px) {
+
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-bar {
+        display: grid;
+        grid-template-areas: 'logo buttons';
+        grid-template-columns: 50% 50%;
+        width: 80vw;
+    }
+
+    #left-container {
+        grid-area: logo;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    #right-container {
+        grid-area: buttons;
+        display: flex;
+        justify-content: center;
+    }
+
+    form.search-bar {
+        display: none;
+    }
+
+    #center-container {
+        display: none;
+    }
+}
+
+
+@media (max-width: 494px) {
+    .nav-bar {
+        width: 100vw;
+        margin: 0 50px;
+    }
+} */
