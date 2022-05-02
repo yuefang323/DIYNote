@@ -5,11 +5,11 @@ body {
   /* background-color: var(--chocolate); */
 }
 
-#landing-page-header {
+#splash-page-header {
   min-width: 465px;
 }
 
-#landing-page-nav-bar {
+#splash-page-nav-bar {
   display: grid;
   grid-template-columns: 150px 8fr auto;
   width: 85%;
@@ -17,7 +17,7 @@ body {
   text-align: center;
 }
 
-.landing-page-container {
+.splash-page-container {
   display: flex;
   justify-content: center;
   align-items: center;
