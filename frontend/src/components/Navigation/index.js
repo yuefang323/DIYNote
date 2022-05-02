@@ -5,7 +5,7 @@ import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal"; // add modal
 import "./Navigation.css";
 import SignupFormModal from "../SignupFormModal";
-import img from "./favicon.ico";
+import logo from "../../Assets/logo.png";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -27,12 +27,8 @@ function Navigation({ isLoaded }) {
       <nav className="nav-bar" id={!sessionUser ? "splash-page-nav-bar" : ""}>
         <div className="navbar-element" id="left-container">
           <NavLink exact to="/">
-            <img className="favicon-image" src={img} alt="DIYnote" />
-            {/* <img
-              className="inkr-logo"
-              src="/images/logotype.svg"
-              alt="inkr logo"
-            ></img> */}
+              <img className="favicon-image" src={logo} alt="DIYnote" />
+              <span className="logo-text">DIYnote</span>
           </NavLink>
         </div>
 

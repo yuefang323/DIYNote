@@ -1,7 +1,6 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import "./LandingPage.css";
-// import Navigation from "../Navigation";
+import { NavLink } from "react-router-dom";
+import "./SplashPage.css";
 
 const LandingPage = ({ isLoaded }) => {
   return (
@@ -12,6 +11,18 @@ const LandingPage = ({ isLoaded }) => {
           <h3>
             Utilize the DIYnote, remember everything and tackle any project.
           </h3>
+          <h4>
+            <button type="button" data-toggle='modal' data-target='#'>
+              <NavLink to="/signup" className="splash-signup-button">
+                Sign up for free
+              </NavLink>
+            </button>
+          </h4>
+          <h4>
+            <NavLink to="/login" className="splash-login-link">
+              Already have an account? Log in
+            </NavLink>
+          </h4>
         </div>
       </div>
 

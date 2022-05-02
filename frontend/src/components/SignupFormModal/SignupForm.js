@@ -40,7 +40,7 @@ function SignupFormPage() {
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder='Enter Email Address'
+          placeholder='Email Address'
           required
         />
       </label>
