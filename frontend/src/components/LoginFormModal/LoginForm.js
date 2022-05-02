@@ -34,6 +34,7 @@ function LoginForm() {
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
+          placeholder='Username or Email'
           required
         />
       </label>
@@ -43,10 +44,12 @@ function LoginForm() {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder='Password'
           required
         />
       </label>
-      <button type="submit">Log In</button>
+      <button type="submit" className="login-button">Log In</button>
+      {/* <Demo /> // demo user  */}
     </form>
   );
 }

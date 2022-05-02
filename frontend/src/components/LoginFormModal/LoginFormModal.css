@@ -1,0 +1,15 @@
+#login-modal {
+    border: none;
+    display: inline-block;
+    margin: 0;
+    background: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+}
+
+#login-modal:hover {
+    color: #ffffff94;
+}
