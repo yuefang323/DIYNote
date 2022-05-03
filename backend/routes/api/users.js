@@ -43,38 +43,47 @@ router.post(
   })
 );
 
-// get a user's all notebooks 
-router.get("/:userId/notebooks", asyncHandler(async (req, res) => {
-  const userId = req.params.userId;
-  const notebooks = await Notebook.findAll({
-    where: {
-      userId, 
-    }, 
-    order: [["updatedAt", "DESC"]],
+// get a user's all notebooks
+router.get(
+  "/:userId/notebooks",
+  asyncHandler(async (req, res) => {
+    const userId = req.params.userId;
+    const notebooks = await Notebook.findAll({
+      where: {
+        userId,
+      },
+      order: [["updatedAt", "DESC"]],
+    });
+    return res.json(notebooks);
   })
-  return res.json(notebooks); 
-})); 
-// get a user's all notebooks 
-router.get("/:userId/notebooks", asyncHandler(async (req, res) => {
-  const userId = req.params.userId;
-  const notebooks = await Notebook.findAll({
-    where: {
-      userId, 
-    }, 
-    order: [["updatedAt", "DESC"]],
+);
+// get a user's all notebooks
+router.get(
+  "/:userId/notebooks",
+  asyncHandler(async (req, res) => {
+    const userId = req.params.userId;
+    const notebooks = await Notebook.findAll({
+      where: {
+        userId,
+      },
+      order: [["updatedAt", "DESC"]],
+    });
+    return res.json(notebooks);
   })
-  return res.json(notebooks); 
-})); 
+);
 // get a user's all notes
-router.get("/:userId/notes", asyncHandler(async (req, res) => {
-  const userId = req.params.userId;
-  const notes = await Note.findAll({
-    where: {
-      userId, 
-    }, 
-    order: [["updatedAt", "DESC"]],
+router.get(
+  "/:userId/notes",
+  asyncHandler(async (req, res) => {
+    const userId = req.params.userId;
+    const notes = await Note.findAll({
+      where: {
+        userId,
+      },
+      order: [["updatedAt", "DESC"]],
+    });
+    return res.json(notes);
   })
-  return res.json(notes); 
-})); 
+);
 
 module.exports = router;

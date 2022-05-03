@@ -30,25 +30,30 @@ router.get(
   })
 );
 // update a note
-router.put("/:id(\\d+)",
-asyncHandler(async (req, res) => {
-  const noteId = req.params.id;
-  const note = await Note.findByPk(noteId);
-  const { title, content, notebookId, userId } = req.body 
-  const newNote = await note.update({
-    title, 
-    content, 
-    notebookId,
-    userId, 
+router.put(
+  "/:id(\\d+)",
+  asyncHandler(async (req, res) => {
+    const noteId = req.params.id;
+    const note = await Note.findByPk(noteId);
+    const { title, content, notebookId, userId } = req.body;
+    const newNote = await note.update({
+      title,
+      content,
+      notebookId,
+      userId,
+    });
+    return res.json(newNote);
   })
-  return res.json(newNote);
-}))
-// delete a note 
-router.delete("/:id(\\d+)", asyncHandler(async(req, res) => {
-  const noteId = req.params.id; 
-  const note = await Note.findByPk(noteId);
-  await note.destroy(); 
-  return res.json({message: "note is successfully deleted"})
-}))
+);
+// delete a note
+router.delete(
+  "/:id(\\d+)",
+  asyncHandler(async (req, res) => {
+    const noteId = req.params.id;
+    const note = await Note.findByPk(noteId);
+    await note.destroy();
+    return res.json({ message: "note is successfully deleted" });
+  })
+);
 
 module.exports = router;
