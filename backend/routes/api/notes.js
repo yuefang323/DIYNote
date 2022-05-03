@@ -3,21 +3,8 @@ const asyncHandler = require("express-async-handler");
 const { Note } = require("../../db/models");
 const router = express.Router();
 
-// get all notes of a login user
-router.get(
-  "/",
-  asyncHandler(async (req, res) => {
-    const userId = req.params.userId;
-    const notes = await Note.findAll({
-      where: {
-        userId,
-      },
-      order: [["updatedAt", "DESC"]],
-    });
+// get all notes of a login user - see users.js
 
-    return res.json(notes);
-  })
-);
 // post a new note
 router.post(
   "/",
@@ -30,15 +17,7 @@ router.post(
       content,
       notebookId,
     });
-
-    const notes = await Note.findAll({
-      where: {
-        userId,
-        notebookId,
-      },
-      order: [["updatedAt", "DESC"]],
-    });
-    return res.json(notes);
+    return res.json(newNote);
   })
 );
 // get a specific note
@@ -50,5 +29,18 @@ router.get(
     return res.json(note);
   })
 );
+// update a note
+router.put("/:id(\\d+)",
+asyncHandler(async (req, res) => {
+  const noteId = req.params.id;
+  const note = await Note.findByPk(noteId);
+  const { title, content } = req.body 
+  const newNote = await note.update({
+    title, 
+    content, 
+  })
+  return res.json(newNote);
+}))
+// delete a note 
 
 module.exports = router;

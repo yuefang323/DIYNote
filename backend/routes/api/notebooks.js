@@ -17,7 +17,6 @@ router.post("/", asyncHandler(async(req, res) => {
 })); 
 
 // get a notebook detail
-
 router.get("/:id(\\d+)", asyncHandler(async(req, res) => {
     const notebookId = req.params.id; 
     const notes = await Note.findAll({
