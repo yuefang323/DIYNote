@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
       },
       notebookId: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: { model: "Notebooks" },
       },
