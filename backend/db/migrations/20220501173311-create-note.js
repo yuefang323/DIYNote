@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.TEXT,
       },
       notebookId: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: { model: "Notebooks" },
       },

@@ -24,9 +24,9 @@ const SplashPage = ({ isLoaded }) => {
             )}
           </h4>
           <h4>
-            <a id="login-link" onClick={() => setShowModal(true)}>
+            <button id="login-link" onClick={() => setShowModal(true)}>
               Already have an account? Log in
-            </a>
+            </button>
             {showModal && (
               <Modal onClose={() => setShowModal(false)}>
                 <LoginForm />

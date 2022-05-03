@@ -9,13 +9,13 @@ const router = express.Router();
 router.post(
   "/",
   asyncHandler(async (req, res) => {
-    const { userId, title, content, notebookId } = req.body;
+    const { title, content, notebookId, userId } = req.body;
 
     const newNote = await Note.create({
-      userId,
       title,
       content,
       notebookId,
+      userId,
     });
     return res.json(newNote);
   })
@@ -34,13 +34,21 @@ router.put("/:id(\\d+)",
 asyncHandler(async (req, res) => {
   const noteId = req.params.id;
   const note = await Note.findByPk(noteId);
-  const { title, content } = req.body 
+  const { title, content, notebookId, userId } = req.body 
   const newNote = await note.update({
     title, 
     content, 
+    notebookId,
+    userId, 
   })
   return res.json(newNote);
 }))
 // delete a note 
+router.delete("/:id(\\d+)", asyncHandler(async(req, res) => {
+  const noteId = req.params.id; 
+  const note = await Note.findByPk(noteId);
+  await note.destroy(); 
+  return res.json({message: "note is successfully deleted"})
+}))
 
 module.exports = router;

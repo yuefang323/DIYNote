@@ -43,7 +43,7 @@ router.delete("/:id(\\d+)", asyncHandler(async(req, res) => {
     const notebookId = req.params.id; 
     const notebook = await Notebook.findByPk(notebookId);
     await notebook.destroy(); 
-    return res.json({message: "successfully deleted"})
+    return res.json({message: "notebook is successfully deleted"})
 }))
 
 
