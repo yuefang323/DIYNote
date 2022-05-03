@@ -28,9 +28,24 @@ router.get("/:id(\\d+)", asyncHandler(async(req, res) => {
     })
     return res.json(notes); 
 })); 
-
 // update a notebook info
+router.put("/:id(\\d+)", asyncHandler(async(req, res) => {
+    const notebookId = req.params.id; 
+    const notebook = await Notebook.findByPk(notebookId);
 
+    const { name } = req.body; 
+    const updatedNotebook = await notebook.update({
+        name, 
+    })
+    return res.json(updatedNotebook); 
+})); 
 // delete a notebook
+router.delete("/:id(\\d+)", asyncHandler(async(req, res) => {
+    const notebookId = req.params.id; 
+    const notebook = await Notebook.findByPk(notebookId);
+    await notebook.destroy(); 
+    return res.json({message: "successfully deleted"})
+}))
+
 
 module.exports = router;
