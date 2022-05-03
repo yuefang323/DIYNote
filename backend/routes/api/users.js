@@ -1,8 +1,8 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 
-const { setTokenCookie, requireAuth } = require("../../utils/auth");
-const { User } = require("../../db/models");
+const { setTokenCookie } = require("../../utils/auth");
+const { User, Notebook, Note } = require("../../db/models");
 
 const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
@@ -42,5 +42,39 @@ router.post(
     });
   })
 );
+
+// get a user's all notebooks 
+router.get("/:userId/notebooks", asyncHandler(async (req, res) => {
+  const userId = req.params.userId;
+  const notebooks = await Notebook.findAll({
+    where: {
+      userId, 
+    }, 
+    order: [["updatedAt", "DESC"]],
+  })
+  return res.json(notebooks); 
+})); 
+// get a user's all notebooks 
+router.get("/:userId/notebooks", asyncHandler(async (req, res) => {
+  const userId = req.params.userId;
+  const notebooks = await Notebook.findAll({
+    where: {
+      userId, 
+    }, 
+    order: [["updatedAt", "DESC"]],
+  })
+  return res.json(notebooks); 
+})); 
+// get a user's all notes
+router.get("/:userId/notes", asyncHandler(async (req, res) => {
+  const userId = req.params.userId;
+  const notes = await Note.findAll({
+    where: {
+      userId, 
+    }, 
+    order: [["updatedAt", "DESC"]],
+  })
+  return res.json(notes); 
+})); 
 
 module.exports = router;

@@ -1,27 +1,37 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
 import "./SplashPage.css";
+import { Modal } from "../../context/Modal";
+import SignupFormPage from "../SignupFormModal/SignupForm";
+import LoginForm from "../LoginFormModal/LoginForm";
 
-const LandingPage = ({ isLoaded }) => {
+const SplashPage = ({ isLoaded }) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
-      <div className="landing-page-container">
+      <div className="splash-page-container">
         <div className="body-text">
           <h1>DIY your notes, color your life</h1>
           <h3>
             Utilize the DIYnote, remember everything and tackle any project.
           </h3>
           <h4>
-            <button type="button" data-toggle='modal' data-target='#'>
-              <NavLink to="/signup" className="splash-signup-button">
-                Sign up for free
-              </NavLink>
-            </button>
+            <button onClick={() => setShowModal(true)}>Sign up for free</button>
+            {showModal && (
+              <Modal onClose={() => setShowModal(false)}>
+                <SignupFormPage />
+              </Modal>
+            )}
           </h4>
           <h4>
-            <NavLink to="/login" className="splash-login-link">
+            <a id="login-link" onClick={() => setShowModal(true)}>
               Already have an account? Log in
-            </NavLink>
+            </a>
+            {showModal && (
+              <Modal onClose={() => setShowModal(false)}>
+                <LoginForm />
+              </Modal>
+            )}
           </h4>
         </div>
       </div>
@@ -38,7 +48,7 @@ const LandingPage = ({ isLoaded }) => {
         </li>
       </ul>
       <Footer /> */}
-      <footer className={true ? "landing-page-footer" : "logged-in-footer"}>
+      <footer className={true ? "splash-page-footer" : "logged-in-footer"}>
         {true && (
           <ul className="foot-stuff">
             <li>Javascript</li>
@@ -81,4 +91,4 @@ const LandingPage = ({ isLoaded }) => {
   );
 };
 
-export default LandingPage;
+export default SplashPage;
