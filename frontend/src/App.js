@@ -18,9 +18,17 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            {sessionUser? <Redirect to="/home" /> : null}
-            <SplashPage isLoaded={isLoaded} />
+            <SplashPage />
           </Route>
+          <Route exact path="/home">
+            <SplashPage />
+          </Route>
+          {/* <Route exact path="/my-notes">
+            <MyNotes />
+          </Route> */}
+          {/* <Route exact path="/my-notebooks">
+            <MyNotebooks />
+          </Route> */}
           <Route>PageNotFound</Route>
         </Switch>
       )}
