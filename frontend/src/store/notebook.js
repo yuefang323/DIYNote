@@ -2,10 +2,10 @@ import { csrfFetch } from "./csrf";
 
 // -------- Constants --------
 const GET_ALL_NOTEBOOKS = "notebooks/GET_ALL_NOTEBOOKS";
-const GET_NOTEBOOK = "notebooks/GET_NOTEBOOK";
-const CREATE_NOTEBOOK = "notebooks/CREATE_NOTEBOOK";
+// const GET_NOTEBOOK = "notebooks/GET_NOTEBOOK";
+// const CREATE_NOTEBOOK = "notebooks/CREATE_NOTEBOOK";
 // const UPDATE_NOTEBOOK = 'notebooks/UPDATE_NOTEBOOK';
-const DELETE_NOTEBOOK = "notebooks/DELETE_NOTEBOOK";
+// const DELETE_NOTEBOOK = "notebooks/DELETE_NOTEBOOK";
 
 // ---------------- Actions -----------
 // GET a user's all notebooks
@@ -14,34 +14,36 @@ export const getAllNotebooks = (notebooks) => ({
   notebooks,
 });
 // GET a notebook's all notes
-export const getNotebook = (notebook) => ({
-  type: GET_NOTEBOOK,
-  payload: notebook,
-});
+// export const getNotebook = (notebook) => ({
+//   type: GET_NOTEBOOK,
+//   payload: notebook,
+// });
 // POST a new notebook
-export const createNotebook = (newNotebook) => ({
-  type: CREATE_NOTEBOOK,
-  payload: newNotebook,
-});
+// export const createNotebook = (newNotebook) => ({
+//   type: CREATE_NOTEBOOK,
+//   newNotebook,
+// });
 // UPDATE a notebook
-// export const updateNotebook = (updatedNotebook) => ({
+// export const updateNotebook = (notebook) => ({
 //     type: UPDATE_NOTEBOOK,
-//     payload: updatedNotebook
+//     notebook
 // })
 // DELETE a notebook
-export const deleteNotebook = (notebook) => ({
-  type: DELETE_NOTEBOOK,
-  payload: notebook,
-});
+// export const deleteNotebook = (notebook) => ({
+//   type: DELETE_NOTEBOOK,
+//   notebook,
+// });
 
 // ---------------- Thunk Actions -------------
 // Thunk for getting all notebooks
-export const getAllNotebooksThunk = (userId) => async (dispath) => {
-  const res = await csrfFetch(`/api/users/${userId}/notebooks`);
-  if (res.ok) {
-    const allNotebooks = await res.json();
-    dispath(getAllNotebooks(allNotebooks));
-    return allNotebooks;
+export const getAllNotebooksThunk = (userId) => async (dispatch) => {
+
+  const response = await csrfFetch(`/api/users/${userId}/notebooks`)
+  if(response.ok) {
+      const notebooks = await response.json();
+      console.log(notebooks.notebooks)
+      dispatch(getAllNotebooks(notebooks.notebooks));
+      //return notebooks;
   }
 };
 // Thunk for getting a notebook's all notes
@@ -57,46 +59,51 @@ export const getAllNotebooksThunk = (userId) => async (dispath) => {
 //   }
 // };
 // Thunk for creating a new notebook
-export const createNotebookThunk = (userId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/notebooks/`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ userId }),
-  });
-  if (res.ok) {
-    const newNotebook = await res.json();
-    dispatch(createNotebook(newNotebook));
-    return newNotebook;
-  }
-};
+// export const createNotebookThunk = (userId) => async (dispatch) => {
+//   const res = await csrfFetch(`/api/notebooks/`, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ userId }),
+//   });
+//   if (res.ok) {
+//     const newNotebook = await res.json();
+//     dispatch(createNotebook(newNotebook));
+//     return newNotebook;
+//   }
+// };
 // Thunk for deleting a notebook
-export const deleteNotebookThunk = (notebook) => async (dispatch) => {
-  const { id } = notebook;
-  const res = await csrfFetch(`/api/notebooks/${id}`, {
-    method: "DELETE",
-    body: JSON.stringify({ id }),
-  });
-  if (res.ok) {
-    const deletedNotebook = await res.json();
-    dispatch(deleteNotebook(deletedNotebook));
-    return deleteNotebook;
-  }
-};
+// export const deleteNotebookThunk = (notebook) => async (dispatch) => {
+//   const { id } = notebook;
+//   const res = await csrfFetch(`/api/notebooks/${id}`, {
+//     method: "DELETE",
+//     body: JSON.stringify({ id }),
+//   });
+//   if (res.ok) {
+//     const deletedNotebook = await res.json();
+//     dispatch(deleteNotebook(deletedNotebook));
+//     return deleteNotebook;
+//   }
+// };
 
 const initialState = {}; 
 
 export default function notebooksReducer(state = initialState, action) {
     let newState;
+  
     switch (action.type) {
       case GET_ALL_NOTEBOOKS: {
-        return { ...state, notebooks: action.payload };
+        newState = {...state}; 
+        action.notebooks.forEach(notebook => newState[notebook.id] = notebook)
+        return newState
       }
     //   case GET_NOTEBOOK: {
     //     return { ...state, notebook: action.payload };
     //   }
-    //   case CREATE_NOTEBOOK: {
-    //     return { ...state, notebooks: action.payload };
-    //   }
+    // case CREATE_NOTEBOOK:
+    //         newState = {...state};
+    //         // console.log(action.newNotebook.newNotebook)
+    //         newState[action.newNotebook.newNotebook.id] = action.newNotebook.newNotebook
+    //         return newState;
     //   case DELETE_NOTEBOOK:
     //         newState = { ...state };
     //         newNotebooks = { ...state.notebooks };

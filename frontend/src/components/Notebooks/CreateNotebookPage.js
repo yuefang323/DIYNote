@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import * as notebookActions from '../../store/notebook';
-
 import './Notebooks.css'
 import { useHistory, useParams, Redirect } from "react-router-dom";
 
@@ -32,7 +31,7 @@ const CreateNotebookPage = () => {
             title, 
             userId, 
         }
-        dispatch(notebookActions.createNotebook(newNotebook));
+        // dispatch(notebookActions.createNotebook(newNotebook));
         // setShowModal(false);
 
     }

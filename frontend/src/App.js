@@ -33,9 +33,6 @@ function App() {
           <ProtectedRoute path='/home'>
             <HomePage />
           </ProtectedRoute>
-          <ProtectedRoute path='/notebooks'>
-            <Notebook />
-          </ProtectedRoute>
           <Route>PageNotFound</Route>
         </Switch>
       )}
