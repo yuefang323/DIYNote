@@ -8,6 +8,7 @@ import HomePage from "./components/HomePage";
 import Notebooks from "./components/Notebooks"; 
 import Notes from './components/Notes'
 import UpdateNotePage from "./components/Notes/UpdateNotePage";
+import ErrorPage from './components/ErrorPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function App() {
             {user ? <Redirect to="/home" /> : null}
             <SplashPage />
           </Route>
-          <ProtectedRoute path='/home'>
+          <ProtectedRoute exact path='/home'>
             <HomePage />
           </ProtectedRoute>
           <Route path='/notebooks/:notebookId'>
@@ -41,7 +42,7 @@ function App() {
           <Route exact path='/notes/:noteId'>
             <UpdateNotePage />
           </Route>
-          <Route>PageNotFound</Route>
+          <Route><ErrorPage /></Route>
         </Switch>
       )}
     </>
