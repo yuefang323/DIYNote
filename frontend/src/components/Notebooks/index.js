@@ -5,7 +5,8 @@ import { Redirect, Link, useHistory } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import "./Notebooks.css";
 
-// import CreateNotebookPage from './CreateNotebookPage';
+import CreateNotebookPage from "./CreateNotebookPage";
+import UpdateNotebookPage from "./UpdateNotebookPage";
 
 import * as notebookActions from "../../store/notebook";
 
@@ -34,6 +35,20 @@ function Notebooks() {
           <Link to={`/notebooks/${notebook.id}`} className="notebook-link">
             Name: {notebook.name}
           </Link>
+          {/* <button
+            className="notebook-rename-btn"
+            onClick={() => setShowModal(true)}
+          >
+            Rename Notebook
+          </button>
+          {showModal && (
+            <Modal onClose={() => setShowModal(false)}>
+              <UpdateNotebookPage
+                showModal={showModal}
+                setShowModal={setShowModal}
+              />
+            </Modal>
+          )} */}
           <button
             className="notebook-delete-btn"
             onClick={() =>
@@ -46,12 +61,20 @@ function Notebooks() {
         </div>
       ))}
 
-      {/* <button className='notebook-create-btn' onClick={() => setShowModal(true)}>Create New Notebook</button>
-            {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
-                    <CreateNotebookPage showModal={showModal} setShowModal={setShowModal}/>
-                </Modal>
-            )} */}
+      <button
+        className="notebook-create-btn"
+        onClick={() => setShowModal(true)}
+      >
+        Create New Notebook
+      </button>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <CreateNotebookPage
+            showModal={showModal}
+            setShowModal={setShowModal}
+          />
+        </Modal>
+      )}
       {/* <img src='' alt='gif'/> */}
       {/* <iframe src="https://giphy.com/embed/3oKGzvg3gGxSS3O38A" width="280" height="280" frameBorder="0" allowFullScreen></iframe> */}
     </div>
