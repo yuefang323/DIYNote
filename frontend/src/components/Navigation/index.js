@@ -23,24 +23,17 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <header id={!sessionUser ? "splash-page-header" : ""}>
-      <nav className="nav-bar" id={!sessionUser ? "splash-page-nav-bar" : ""}>
+      <nav>
         <div className="navbar-element" id="left-container">
-          <NavLink exact to="/">
-              <img className="favicon-image" src={logo} alt="DIYnote" />
+          <NavLink exact to="/" className='logo'>
+              <img className="logo-image" src={logo} alt="DIYnote" />
               <span className="logo-text">DIYnote</span>
           </NavLink>
         </div>
-
-        {/* <div className="navbar-element" id="center-container">
-          <ul className="session-links">{isLoaded && centerLink}</ul>
-        </div> */}
-
         <div className="navbar-element" id="right-container">
           <ul className="session-links">{isLoaded && sessionLinks}</ul>
         </div>
       </nav>
-    </header>
   );
 }
 

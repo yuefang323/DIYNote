@@ -5,17 +5,8 @@ header {
   background-color: var(--chocolate-fade);
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 5000;
   max-height: 67px;
-  /* min-width: 1320px; */
-}
-
-.nav-bar {
-  display: grid;
-  grid-template-columns: 150px auto 500px;
-  width: 85%;
-  padding: 15px 0;
-  text-align: center;
 }
 
 .session-links {
@@ -25,7 +16,7 @@ header {
 }
 
 .active-link {
-  border-bottom: 1px solid var(--soft-white);
+  border-bottom: 1px solid var(--soft-black);
 }
 
 /* %%%%%%%%%%%%%%%%%%%%% NavBar Left Container %%%%%%%%%%%%%%%%%%%%% */
@@ -37,22 +28,21 @@ header {
   justify-self: flex-start;
   width: fit-content;
 }
+.logo{
+  display: flex;
+  justify-content: start;
+}
 
 .logo-text {
-    font-family: Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 64px;
-    padding: 5px; 
-    color: black
-    
-  }
-
-/* %%%%%%%%%%%%%%%%%%%%% NavBar Center Container %%%%%%%%%%%%%%%%%%%%% */
-
-#center-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  font-family: Courier;
+  font-weight: bold;
+  font-size: 40px;
+  padding: 5px;
+  color: black;
+}
+.logo-image {
+  width: 50px;
+  padding-top: 10px;
 }
 
 /* %%%%%%%%%%%%%%%%%%%%% NavBar Right Container %%%%%%%%%%%%%%%%%%%%% */
@@ -184,11 +174,7 @@ header {
 }
 
 @media (max-width: 1350px) {
-  form.search-bar {
-    display: none;
-  }
-
-  .nav-bar {
+  .logo {
     display: grid;
     grid-template-columns: auto auto auto;
     width: 80vw;
@@ -197,61 +183,4 @@ header {
   #left-container {
     min-width: 101px;
   }
-
-  #center-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 0 20px;
-  }
-
-  #right-container {
-    width: fit-content;
-  }
 }
-
-/*
-
-@media (max-width: 936px) {
-
-    header {
-        display: flex;
-        justify-content: center;
-    }
-
-    .nav-bar {
-        display: grid;
-        grid-template-areas: 'logo buttons';
-        grid-template-columns: 50% 50%;
-        width: 80vw;
-    }
-
-    #left-container {
-        grid-area: logo;
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-    }
-
-    #right-container {
-        grid-area: buttons;
-        display: flex;
-        justify-content: center;
-    }
-
-    form.search-bar {
-        display: none;
-    }
-
-    #center-container {
-        display: none;
-    }
-}
-
-
-@media (max-width: 494px) {
-    .nav-bar {
-        width: 100vw;
-        margin: 0 50px;
-    }
-} */

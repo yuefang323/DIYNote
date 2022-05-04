@@ -3,6 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 
 import './LoginForm.css';
+import DemoUser from "../DemoUser";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ function LoginForm() {
         />
       </label>
       <button type="submit" className="login-button">Log In</button>
-      {/* <Demo /> // demo user  */}
+      <DemoUser />
     </form>
   );
 }

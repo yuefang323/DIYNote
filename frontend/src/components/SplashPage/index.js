@@ -4,15 +4,18 @@ import { Modal } from "../../context/Modal";
 import SignupFormPage from "../SignupFormModal/SignupForm";
 import LoginForm from "../LoginFormModal/LoginForm";
 import Footer from "../Footer";
+import Navigation from "../Navigation";
 
 const SplashPage = ({ isLoaded }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
+    
+     <Navigation isLoaded={isLoaded} />
       <div className="splash-page-container">
         <div className="body-text">
-          <h1>DIY your notes, color your life</h1>
+          <h2>DIY your notes, color your life</h2>
           <h3>
             Utilize the DIYnote, remember everything and tackle any project.
           </h3>
