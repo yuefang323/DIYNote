@@ -11,7 +11,7 @@ const DELETE_NOTEBOOK = "notebooks/DELETE_NOTEBOOK";
 // GET a user's all notebooks
 export const getAllNotebooks = (notebooks) => ({
   type: GET_ALL_NOTEBOOKS,
-  payload: notebooks,
+  notebooks,
 });
 // GET a notebook's all notes
 export const getNotebook = (notebook) => ({
