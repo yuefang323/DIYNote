@@ -1,57 +1,61 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, Link, useHistory } from 'react-router-dom';
-import {Modal} from '../../context/Modal';
-import './Notebooks.css';
+import React from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect, Link, useHistory } from "react-router-dom";
+import { Modal } from "../../context/Modal";
+import "./Notebooks.css";
 
 // import CreateNotebookPage from './CreateNotebookPage';
 
-import * as notebookActions from '../../store/notebook';
+import * as notebookActions from "../../store/notebook";
 
+function Notebooks() {
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-function Notebooks(){
+  const sessionUser = useSelector((state) => state.session.user);
+  const userId = sessionUser.id;
+  console.log(userId);
+  const notebooks = useSelector((state) => state.notebooks);
+  const data = Object.values(notebooks);
 
-    const dispatch = useDispatch()
-    const history = useHistory()
+  const [showModal, setShowModal] = useState(false);
 
-    const sessionUser = useSelector(state => state.session.user);
-    const userId = sessionUser.id
-    console.log(userId)
-    const notebooks = useSelector(state => state.notebooks);
-    const data = Object.values(notebooks)
+  useEffect(() => {
+    dispatch(notebookActions.getAllNotebooksThunk(userId));
+  }, [dispatch]);
 
-    const [showModal, setShowModal] = useState(false);
+  return (
+    <div className="notebook-container">
+      <h2>Your Notebooks</h2>
+      <h3>{data.length} Notebooks</h3>
+      {data.map((notebook) => (
+        <div className="notebook-title" key={notebook.id}>
+          <Link to={`/notebooks/${notebook.id}`} className="notebook-link">
+            Name: {notebook.name}
+          </Link>
+          <button
+            className="notebook-delete-btn"
+            onClick={() =>
+              dispatch(notebookActions.deleteNotebookThunk(notebook.id))
+            }
+          >
+            {" "}
+            Delete
+          </button>
+        </div>
+      ))}
 
-    useEffect(() => {
-        dispatch(notebookActions.getAllNotebooks(userId))
-    }, [dispatch])
-
-    
-    return(
-        <div className="notebook-container">
-
-            <h2>Your Notebooks</h2>
-            {/* <h3>{data.length} Notebooks</h3>
-            {data.map((notebook) => (
-
-                <div className='notebook-title' key={notebook.id}>
-                    <Link to={`/notebooks/${notebook.id}` } className='notebook-link'>Title: {notebook.title}</Link>
-                    <button className='notebook-delete-btn' onClick={() => dispatch(notebookActions.deleteNotebookThunk(notebook.id, userId))}> Delete</button>
-                </div>
-            ))} */}
-
-            {/* <button className='notebook-create-btn' onClick={() => setShowModal(true)}>Create New Notebook</button>
+      {/* <button className='notebook-create-btn' onClick={() => setShowModal(true)}>Create New Notebook</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <CreateNotebookPage showModal={showModal} setShowModal={setShowModal}/>
                 </Modal>
             )} */}
-            {/* <img src='' alt='gif'/> */}
-            {/* <iframe src="https://giphy.com/embed/3oKGzvg3gGxSS3O38A" width="280" height="280" frameBorder="0" allowFullScreen></iframe> */}
-        </div>
-    )
+      {/* <img src='' alt='gif'/> */}
+      {/* <iframe src="https://giphy.com/embed/3oKGzvg3gGxSS3O38A" width="280" height="280" frameBorder="0" allowFullScreen></iframe> */}
+    </div>
+  );
 }
-
 
 export default Notebooks;

@@ -32,6 +32,8 @@ module.exports = (sequelize, DataTypes) => {
     });
     Note.hasMany(models.NoteTag, {
       foreignKey: "noteId",
+      onDelete: "CASCADE",
+      hooks: true,
     });
     Note.belongsToMany(models.Tag, {
       foreignKey: "noteId",
