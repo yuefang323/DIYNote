@@ -5,7 +5,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import HomePage from "./components/HomePage";
-import Notebook from "./components/Notebooks"; 
+import Notebooks from "./components/Notebooks"; 
+import Notes from './components/Notes'
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,9 @@ function App() {
           <ProtectedRoute path='/home'>
             <HomePage />
           </ProtectedRoute>
+          <Route path='/notebooks/:notebookId'>
+            <Notes />
+          </Route>
           <Route>PageNotFound</Route>
         </Switch>
       )}
