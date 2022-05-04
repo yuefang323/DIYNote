@@ -26,10 +26,10 @@ function Navigation({ isLoaded }) {
     <header id={!sessionUser ? "splash-page-header" : ""}>
       <nav className="nav-bar" id={!sessionUser ? "splash-page-nav-bar" : ""}>
         <div className="navbar-element" id="left-container">
-          {/* <NavLink exact to="/">
+          <NavLink exact to="/">
               <img className="favicon-image" src={logo} alt="DIYnote" />
               <span className="logo-text">DIYnote</span>
-          </NavLink> */}
+          </NavLink>
         </div>
 
         {/* <div className="navbar-element" id="center-container">
