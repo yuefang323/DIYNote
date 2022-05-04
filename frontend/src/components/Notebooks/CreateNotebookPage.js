@@ -20,8 +20,7 @@ function CreateNotebookForm({ showModal, setShowModal }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validateErrors = [];
-    if (inputVal.length < 1) validateErrors.push("Title is required");
-    // if (inputVal.length > 100) validateErrors.push("Title is too long");
+    if (inputVal.length < 1) validateErrors.push("Notebook name is required");
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
       return;
@@ -32,7 +31,7 @@ function CreateNotebookForm({ showModal, setShowModal }) {
   };
   return (
     <form onSubmit={handleSubmit} className="create-notebook-form">
-      <h2 className="create-notebook-title">Create a new notebook</h2>
+      <h2 className="create-notebook-name">Create a new notebook</h2>
       <ul className="create-notebook-errors">
         {errors && errors.map((error) => <li key={error}>{error}</li>)}
       </ul>

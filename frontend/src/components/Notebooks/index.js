@@ -16,9 +16,8 @@ function Notebooks() {
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
-  console.log(userId);
   const notebooks = useSelector((state) => state.notebooks);
-  const data = Object.values(notebooks);
+  const notebooksList = Object.values(notebooks);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -28,14 +27,14 @@ function Notebooks() {
 
   return (
     <div className="notebook-container">
-      <h2>Your Notebooks</h2>
-      <h3>{data.length} Notebooks</h3>
-      {data.map((notebook) => (
+      <h2>{sessionUser.username}'s Notebooks</h2>
+      <h3>{notebooksList.length} Notebooks</h3>
+      {notebooksList.map((notebook) => (
         <div className="notebook-title" key={notebook.id}>
           <Link to={`/notebooks/${notebook.id}`} className="notebook-link">
             Name: {notebook.name}
           </Link>
-          {/* <button
+          <button
             className="notebook-rename-btn"
             onClick={() => setShowModal(true)}
           >
@@ -48,7 +47,7 @@ function Notebooks() {
                 setShowModal={setShowModal}
               />
             </Modal>
-          )} */}
+          )}
           <button
             className="notebook-delete-btn"
             onClick={() =>

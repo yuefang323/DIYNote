@@ -5,7 +5,7 @@ import "./Notebooks.css";
 
 import * as notebookActions from "../../store/notebook";
 
-function UpdateNotebookForm({ showModal, setShowModal }) {
+function UpdateNotebookPage({ showModal, setShowModal }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -20,8 +20,7 @@ function UpdateNotebookForm({ showModal, setShowModal }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validateErrors = [];
-    if (inputVal.length < 1) validateErrors.push("Title is required");
-    // if (inputVal.length > 100) validateErrors.push("Title is too long");
+    if (inputVal.length < 1) validateErrors.push("Notebook name is required");
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
       return;
@@ -32,7 +31,7 @@ function UpdateNotebookForm({ showModal, setShowModal }) {
   };
   return (
     <form onSubmit={handleSubmit} className="update-notebook-form">
-      <h2 className="update-notebook-title">Update a new notebook</h2>
+      <h2 className="update-notebook-name">Update a new notebook</h2>
       <ul className="update-notebook-errors">
         {errors && errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
@@ -48,11 +47,11 @@ function UpdateNotebookForm({ showModal, setShowModal }) {
           />
         </label>
         <button className="update-notebook-submit" type="submit">
-          Submit
+          Update
         </button>
       </div>
     </form>
   );
 }
 
-export default UpdateNotebookForm;
+export default UpdateNotebookPage;
