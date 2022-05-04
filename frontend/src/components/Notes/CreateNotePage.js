@@ -10,7 +10,6 @@ function CreateNotePage ({showModal, setShowModal, notebookId}) {
 
     const sessionUser = useSelector(state => state.session.user);
     const userId = sessionUser.id;
-    console.log("///////", userId)
 
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');

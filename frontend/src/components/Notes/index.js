@@ -7,24 +7,25 @@ import './Notes.css'
 import * as noteActions from '../../store/note';
 
 import CreateNotePage from './CreateNotePage';
-import UpdateNoteForm from './UpdateNotePage';
 
 function Notes () {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    //get user, userId, and current notebookId
     const sessionUser = useSelector(state => state.session.user);
     const userId = sessionUser.id
     const {notebookId} = useParams();
 
-    //get all notes
     const notes = useSelector(state => state.notes)
-    const data = Object.values(notes);
-    //filter notes belonging to current notebook
-    const filteredNotes = data.filter(note => note.notebookId === Number(notebookId))
-
-
+    const notesList = Object.values(notes);
+    notesList.sort((a, b) => {
+        const keyA = new Date(a.createdAt);
+        const keyB = new Date(b.createdAt);
+        return keyA > keyB ? -1 : 1;
+      });
+      
+    const filteredNotes = notesList.filter(note => note.notebookId === Number(notebookId))
+    
     const [showModal, setShowModal] = useState(false);
     const [editModal, setEditModal] = useState(false);
 
@@ -35,7 +36,7 @@ function Notes () {
     useEffect(() => {
         dispatch(noteActions.getAllNotesThunk(userId))
     }, [dispatch])
-    //if (!sessionUser) return <Redirect to="/" />;
+    
     return (
         <div className='notes-container'>
             <h1>Your Notes</h1>
@@ -49,7 +50,7 @@ function Notes () {
                     <button onClick={() => {
                         setCurrentTitle(note.title)
                         setCurrentContent(note.content)
-                        history.push(`/notebooks/${notebookId}/notes/${note.id}/edit`)
+                        history.push(`/notes/${note.id}`)
                         }} className='edit-btn'>EDIT</button>
 
 

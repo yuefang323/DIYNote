@@ -7,6 +7,7 @@ import SplashPage from "./components/SplashPage";
 import HomePage from "./components/HomePage";
 import Notebooks from "./components/Notebooks"; 
 import Notes from './components/Notes'
+import UpdateNotePage from "./components/Notes/UpdateNotePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <>
-      {/* <Navigation isLoaded={isLoaded} /> */}
+      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route exact path="/">
@@ -36,6 +37,9 @@ function App() {
           </ProtectedRoute>
           <Route path='/notebooks/:notebookId'>
             <Notes />
+          </Route>
+          <Route exact path='/notes/:noteId'>
+            <UpdateNotePage />
           </Route>
           <Route>PageNotFound</Route>
         </Switch>

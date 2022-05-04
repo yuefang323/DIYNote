@@ -12,11 +12,7 @@ export const getAllNotes = (notes) => ({
   type: GET_NOTES,
   notes,
 });
-// GET a notebook's all notes
-// export const getNotebook = (notebook) => ({
-//   type: GET_NOTEBOOK,
-//   payload: notebook,
-// });
+
 // POST a new note
 export const createNote = (newNote) => ({
   type: CREATE_NOTE,
@@ -43,18 +39,6 @@ export const getAllNotesThunk = (userId) => async (dispatch) => {
     return notes;
   }
 };
-// Thunk for getting a notebook's all notes
-// export const getNotebookThunk = (notebookId) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/notebooks/`);
-//   if (res.ok) {
-//     const notebookNotes = await res.json();
-//     dispatch(getNotebook(notebookNotes));
-//     if(!notebookNotes) {
-//         return "bad"
-//     }
-//     return "ok"
-//   }
-// };
 // Thunk for creating a new note
 export const createNoteThunk = (newNote) => async (dispatch) => {
   const { title, content, notebookId, userId } = newNote;
@@ -70,17 +54,18 @@ export const createNoteThunk = (newNote) => async (dispatch) => {
   }
 };
 // Thunk for updating a note
-// export const updateNoteThunk = (id, title, content, userId) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/notes/${id}`, {
-//     method: "PUT",
-//     body: JSON.stringify({ title, content }),
-//   });
-//   if (res.ok) {
-//     const newNote = await res.json();
-//     dispatch(updateNotebook(updatedNotebook));
-//     return updatedNotebook;
-//   }
-// };
+export const updateNoteThunk = (updatedNote, id) => async (dispatch) => {
+  const { title, content, notebookId, userId } = updatedNote;
+  const res = await csrfFetch(`/api/notes/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({ title, content, notebookId, userId }),
+  });
+  if (res.ok) {
+    const updatedNote = await res.json();
+    dispatch(updateNote(updatedNote));
+    return updatedNote;
+  }
+};
 // Thunk for deleting a note
 export const deleteNoteThunk = (id) => async (dispatch) => {
   const res = await csrfFetch(`/api/notes/${id}`, {
@@ -105,21 +90,16 @@ export default function notesReducer(state = initialState, action) {
       action.notes.forEach((note) => (newState[note.id] = note));
       return newState;
     }
-    // case GET_NOTEBOOK: {
-    //   return { ...state, notebook: action.payload };
-    // }
     case CREATE_NOTE:
       newState = { ...state };
-      // console.log(action.newNotebook.newNotebook)
       newState[action.newNote.id] = action.newNote;
       return newState;
-    // case UPDATE_NOTEBOOK:
-    //   newState = { ...state };
-    //   newState[action.notebook.id] = action.notebook;
-    //   return newState;
+    case UPDATE_NOTE:
+      newState = { ...state };
+      newState[action.note.id] = action.note;
+      return newState;
     case DELETE_NOTE:
       newState = { ...state };
-      // console.log("=====action.notebook.deletedNotebook.id" + action.notebook);
       delete newState[action.note];
       return newState;
     default:
