@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link, useHistory } from "react-router-dom";
 import { Modal } from "../../context/Modal";
+import NotebookDeleteConfirmModal from '../DeleteConfirmModal/NotebookDeleteModal'
 import "./Notebooks.css";
 
 import CreateNotebookPage from "./CreateNotebookPage";
@@ -53,7 +54,7 @@ function Notebooks() {
               />
             </Modal>
           )}
-          <button
+          {/* <button
             className="notebook-delete-btn"
             onClick={() =>
               dispatch(notebookActions.deleteNotebookThunk(notebook.id))
@@ -61,7 +62,9 @@ function Notebooks() {
           >
             {" "}
             Delete
-          </button>
+          </button> */}
+          <NotebookDeleteConfirmModal notebookId={notebook.id}/>
+
         </div>
       ))}
 

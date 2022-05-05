@@ -7,13 +7,10 @@ const NotebookDeleteConfirm = ({ showModal, notebookId }) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-//   const { notebookId } = useParams();
-//   console.log("/////", notebookId);
-//   console.log("..........", notebookId);
   const deleteCurrentNotebook = async () => {
     const deletedNotebookId = await dispatch(deleteNotebookThunk(notebookId));
     if (deletedNotebookId) {
-      history.push(`/notebooks/home`);
+      history.push(`/`);
       showModal(false);
     }
   };

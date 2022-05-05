@@ -12,7 +12,7 @@ function NotebookDeleteConfirmModal({ notebookId }) {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <DeleteConfirm showModal={setShowModal} notebookId={notebookId} />
+          <NotebookDeleteConfirm showModal={setShowModal} notebookId={notebookId} />
         </Modal>
       )}
     </>
