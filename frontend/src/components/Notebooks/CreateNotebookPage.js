@@ -41,7 +41,7 @@ function CreateNotebookForm({ showModal, setShowModal }) {
           <input
             className="create-notebook-input"
             type="text"
-            name="title"
+            name="name"
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
           />

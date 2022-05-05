@@ -1,36 +1,40 @@
-.login-button,
-.demo-button {
+.login-button {
     cursor: pointer;
-    color: whitesmoke;
+    color: black;
     padding: 10px;
     border-radius: 3px;
     width: 300px;
     transition-duration: 0.2s;
 }
-
 .login-button {
-    margin-bottom: 10px;
+    margin: 10px;
     background-color: #00C896;
     border: 1px solid #00C896;
 }
 
-.demo-button {
-    background-color: #0077B4;
-    border: 1px solid #0077B4;
+.login-button:hover {
+    background-color: #00a82d;
+    border: 1px solid #00a82d;
 }
 
 .login-button:hover {
-    background-color: #00c896ce;
-    border: 1px solid #00c896ce;
-}
-
-.demo-button:hover {
-    background-color: #0078b4ce;
-    border: 1px solid #0078b4ce;
-}
-
-.login-button:hover,
-.demo-button:hover {
     transform: scale(1.03);
     cursor: pointer;
+}
+
+#login-modal {
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    background: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+}
+
+#login-modal:hover {
+    color: #00a82d;
 }

@@ -1,0 +1,20 @@
+.demo-user-button {
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+  border-radius: 3px;
+  width: 300px;
+  transition-duration: 0.2s;
+  background-color: #0671a6;
+  border: 1px solid #0671a6;
+}
+
+.demo-user-button:hover {
+  background-color: #041490ce;
+  border: 1px solid #041490ce;
+}
+
+.demo-user-button:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}

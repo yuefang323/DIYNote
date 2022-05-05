@@ -18,6 +18,11 @@ function Notebooks() {
   const userId = sessionUser.id;
   const notebooks = useSelector((state) => state.notebooks);
   const notebooksList = Object.values(notebooks);
+  notebooksList.sort((a, b) => {
+    const keyA = new Date(a.createdAt);
+    const keyB = new Date(b.createdAt);
+    return keyA > keyB ? -1 : 1;
+  });
 
   const [showModal, setShowModal] = useState(false);
 

@@ -41,7 +41,7 @@ function UpdateNotebookPage({ showModal, setShowModal }) {
           <input
             className="update-notebook-input"
             type="text"
-            name="title"
+            name="name"
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
           />

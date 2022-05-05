@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import DemoUser from "../DemoUser";
 
 import './LoginForm.css';
 
@@ -34,7 +35,7 @@ function LoginForm() {
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
-          placeholder='Username or Email'
+          placeholder='Username/Email'
           required
         />
       </label>
@@ -49,7 +50,7 @@ function LoginForm() {
         />
       </label>
       <button type="submit" className="login-button">Log In</button>
-      {/* <Demo /> // demo user  */}
+      <DemoUser />
     </form>
   );
 }

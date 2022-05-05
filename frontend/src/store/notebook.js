@@ -2,7 +2,6 @@ import { csrfFetch } from "./csrf";
 
 // -------- Constants --------
 const GET_ALL_NOTEBOOKS = "notebooks/GET_ALL_NOTEBOOKS";
-// const GET_NOTEBOOK = "notebooks/GET_NOTEBOOK";
 const CREATE_NOTEBOOK = "notebooks/CREATE_NOTEBOOK";
 const UPDATE_NOTEBOOK = "notebooks/UPDATE_NOTEBOOK";
 const DELETE_NOTEBOOK = "notebooks/DELETE_NOTEBOOK";
@@ -112,7 +111,6 @@ export default function notebooksReducer(state = initialState, action) {
     // }
     case CREATE_NOTEBOOK:
       newState = { ...state };
-      // console.log(action.newNotebook.newNotebook)
       newState[action.newNotebook.id] = action.newNotebook;
       return newState;
     case UPDATE_NOTEBOOK:
@@ -121,7 +119,6 @@ export default function notebooksReducer(state = initialState, action) {
       return newState;
     case DELETE_NOTEBOOK:
       newState = { ...state };
-      // console.log("=====action.notebook.deletedNotebook.id" + action.notebook);
       delete newState[action.notebook];
       return newState;
     default:
