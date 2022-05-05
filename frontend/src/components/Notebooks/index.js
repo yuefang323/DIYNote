@@ -45,7 +45,7 @@ function Notebooks() {
             className="notebook-rename-btn"
             onClick={() => setShowModal(true)}
           >
-            Rename Notebook
+            <i class="fa-solid fa-pen-to-square"></i>
           </button>
           {showModal && (
             <Modal onClose={() => setShowModal(false)}>

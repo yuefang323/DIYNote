@@ -14,9 +14,13 @@ nav {
   flex-direction: row;
   align-items: flex-start;
   white-space: nowrap;
-  background-color: #000000;
+  /* background-color: #000000; */
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0; 
+  height: 60px;
+  border-bottom: 2px solid #dfe0df9f; 
+  z-index: 20
 }
 
 #left-container {
@@ -26,6 +30,7 @@ nav {
   justify-self: center;
   width: fit-content;
   position: absolute;
+  top: 10%; 
   left: 5%; 
 
 }
@@ -76,6 +81,12 @@ ul>.session-links {
   color: white;
   cursor: pointer;
 }
+/* #nav-bar {
+  height: fit-content;
+  border: 2px solid #dfe0df9f;
+  width: auto; 
+  background-color: black;
+} */
 
 /* @media (max-width: 1350px) {
   #left-container {

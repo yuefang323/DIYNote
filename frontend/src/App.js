@@ -5,14 +5,13 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import HomePage from "./components/HomePage";
-import Notebooks from "./components/Notebooks"; 
-import Notes from './components/Notes'
+import Notebooks from "./components/Notebooks";
+import Notes from "./components/Notes";
+import AllNotes from "./components/Notes/GetAllNotes";
 import UpdateNotePage from "./components/Notes/UpdateNotePage";
-import ErrorPage from './components/ErrorPage'
-import LoginForm from "./components/LoginFormModal/LoginForm";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
-  
   const seesionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,19 +28,24 @@ function App() {
             {seesionUser ? <Redirect to="/users/:userId/home" /> : null}
             <SplashPage />
           </Route>
-          <Route exact path='/users/:userId/home'>
+          <Route exact path="/users/:userId/home">
             <HomePage />
           </Route>
-          <Route exact path='/users/:userId/notebooks'>
+          <Route exact path="/users/:userId/notebooks">
             <Notebooks />
           </Route>
-          <Route exact path='notebooks/:notebookId'>
+          <Route exact path="/users/:userId/notes">
+            <AllNotes />
+          </Route>
+          <Route exact path="/notebooks/:notebookId">
             <Notes />
           </Route>
-          <Route exact path='/notes/:noteId'>
+          <Route exact path="/notes/:noteId">
             <UpdateNotePage />
           </Route>
-          <Route><ErrorPage /></Route>
+          <Route>
+            <ErrorPage />
+          </Route>
         </Switch>
       )}
     </>

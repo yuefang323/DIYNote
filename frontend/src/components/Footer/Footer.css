@@ -9,7 +9,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.801);
+    background-color: #f8f8f8;;
     height: 5rem;
     flex-direction: column;
     cursor: default;
@@ -26,7 +26,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    border-bottom: 1px solid #dfe0df9f;
+    border-bottom: 2px solid #dfe0df9f;
     min-width: 550px;
   }
   
@@ -35,12 +35,18 @@ footer {
     font-size: 15px;
   }
   
-  .about-me {
+  ul.footer-about-me {
     display: flex;
+    padding: 10px;
+    padding-bottom: 0;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
   }
   
-  .about-me li {
-    margin: 0 10px;
+  .footer-about-me li {
+    justify-content: space-between;
+    /* padding: 10px; */
   }
   
   .fa-github {

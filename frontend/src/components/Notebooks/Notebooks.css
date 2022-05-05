@@ -17,3 +17,12 @@
   background-color: #21dc62;
   border: 1px solid #21dc62;
 }
+.fa-solid.fa-pen-to-square {
+    background-color: #076c2b;
+    color: black;
+    border: none;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}

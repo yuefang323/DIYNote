@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import NotebookDeleteConfirm from "./NotebookDeleteConfirm";
+import "./DeleteConfirm.css"
+
 
 function NotebookDeleteConfirmModal({ notebookId }) {
   const [showModal, setShowModal] = useState(false);

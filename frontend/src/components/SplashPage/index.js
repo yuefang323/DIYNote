@@ -1,15 +1,10 @@
 import "./SplashPage.css";
 import React, { useState } from "react";
-import { Modal } from "../../context/Modal";
-import Navigation from "../Navigation";
-import SignupFormPage from "../SignupFormModal/SignupForm";
 import Footer from "../Footer";
-import { NavLink } from "react-router-dom";
 import HaveAccountModal from './HaveAccountModal'
 import SignupFreeModal from "./SignUpFreeModal";
 
 const SplashPage = () => {
-  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
