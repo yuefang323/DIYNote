@@ -8,8 +8,8 @@ const NoteDeleteConfirm = ({ showModal, noteId }) => {
   const dispatch = useDispatch();
 
   const { notebookId } = useParams();
-  console.log("/////", noteId);
-  console.log("..........", notebookId);
+  // console.log("/////", noteId);
+  // console.log("..........", notebookId);
   const deleteCurrentNote = async () => {
     const deletedNoteId = await dispatch(deleteNoteThunk(noteId));
     if (deletedNoteId) {

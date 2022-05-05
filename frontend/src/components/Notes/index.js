@@ -7,7 +7,7 @@ import "./Notes.css";
 import * as noteActions from "../../store/note";
 
 import CreateNotePage from "./CreateNotePage";
-import NoteDeleteConfirmModal from "../NoteDeleteConfirmModal";
+import NoteDeleteConfirmModal from "../DeleteConfirmModal/NoteDeleteModal";
 
 function Notes() {
   const dispatch = useDispatch();
