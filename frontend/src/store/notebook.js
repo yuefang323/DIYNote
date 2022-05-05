@@ -5,7 +5,7 @@ const GET_ALL_NOTEBOOKS = "notebooks/GET_ALL_NOTEBOOKS";
 const CREATE_NOTEBOOK = "notebooks/CREATE_NOTEBOOK";
 const UPDATE_NOTEBOOK = "notebooks/UPDATE_NOTEBOOK";
 const DELETE_NOTEBOOK = "notebooks/DELETE_NOTEBOOK";
-const CLEAR = "notebooks/CLEAR";
+const CLEAR_NOTEBOOKS = "notebooks/CLEAR";
 
 // ---------------- Actions -----------
 // GET a user's all notebooks
@@ -13,11 +13,6 @@ export const getAllNotebooks = (notebooks) => ({
   type: GET_ALL_NOTEBOOKS,
   notebooks,
 });
-// GET a notebook's all notes
-// export const getNotebook = (notebook) => ({
-//   type: GET_NOTEBOOK,
-//   payload: notebook,
-// });
 // POST a new notebook
 export const createNotebook = (newNotebook) => ({
   type: CREATE_NOTEBOOK,
@@ -33,12 +28,10 @@ export const deleteNotebook = (notebook) => ({
   type: DELETE_NOTEBOOK,
   notebook,
 });
-
-const clearNotebooks = () => {
-  return {
-    type: CLEAR,
-  };
-};
+// CLEAR notebooks in a state
+const clearNotebooks = () => ({
+  type: CLEAR_NOTEBOOKS,
+});
 
 // ---------------- Thunk Actions -------------
 // Thunk for getting all notebooks
@@ -50,18 +43,6 @@ export const getAllNotebooksThunk = (userId) => async (dispatch) => {
     return notebooks;
   }
 };
-// Thunk for getting a notebook's all notes
-// export const getNotebookThunk = (notebookId) => async (dispatch) => {
-//   const res = await csrfFetch(`/api/notebooks/`);
-//   if (res.ok) {
-//     const notebookNotes = await res.json();
-//     dispatch(getNotebook(notebookNotes));
-//     if(!notebookNotes) {
-//         return "bad"
-//     }
-//     return "ok"
-//   }
-// };
 // Thunk for creating a new notebook
 export const createNotebookThunk = (name, userId) => async (dispatch) => {
   const res = await csrfFetch(`/api/notebooks/`, {
@@ -99,15 +80,13 @@ export const deleteNotebookThunk = (id) => async (dispatch) => {
     return deletedNotebook;
   }
 };
-
+// clear all notebooks in the state once logout
 export const logout = () => async (dispatch) => {
-  // const response = await csrfFetch("/api/session", {
-  //   method: "DELETE",
-  // });
   dispatch(clearNotebooks());
   return null;
 };
 
+// ---------------- Notebooks Reducer -------------
 const initialState = {};
 
 export default function notebooksReducer(state = initialState, action) {
@@ -121,9 +100,6 @@ export default function notebooksReducer(state = initialState, action) {
       );
       return newState;
     }
-    // case GET_NOTEBOOK: {
-    //   return { ...state, notebook: action.payload };
-    // }
     case CREATE_NOTEBOOK:
       newState = { ...state };
       newState[action.newNotebook.id] = action.newNotebook;
@@ -136,8 +112,7 @@ export default function notebooksReducer(state = initialState, action) {
       newState = { ...state };
       delete newState[action.notebook];
       return newState;
-    case CLEAR:
-      // newState = null;
+    case CLEAR_NOTEBOOKS:
       return {};
     default:
       return state;

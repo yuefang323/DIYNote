@@ -26,13 +26,16 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            {seesionUser ? <Redirect to="/home" /> : null}
+            {seesionUser ? <Redirect to="/users/:userId/home" /> : null}
             <SplashPage />
           </Route>
-          <Route exact path='/home'>
+          <Route exact path='/users/:userId/home'>
             <HomePage />
           </Route>
-          <Route path='/notebooks/:notebookId'>
+          <Route exact path='/users/:userId/notebooks'>
+            <Notebooks />
+          </Route>
+          <Route exact path='notebooks/:notebookId'>
             <Notes />
           </Route>
           <Route exact path='/notes/:noteId'>

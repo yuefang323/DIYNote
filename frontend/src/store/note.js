@@ -5,7 +5,7 @@ const GET_NOTES = "notes/GET_NOTES";
 const CREATE_NOTE = "notes/CREATE_NOTE";
 const UPDATE_NOTE = "notes/UPDATE_NOTE";
 const DELETE_NOTE = "notes/DELETE_NOTE";
-
+const CLEAR_NOTES = "notes/CLEAR";
 // ---------------- Actions -----------
 // GET a user's all notes
 export const getAllNotes = (notes) => ({
@@ -27,6 +27,10 @@ export const updateNote = (note) => ({
 export const deleteNote = (note) => ({
   type: DELETE_NOTE,
   note,
+});
+// CLEAR notes in a state
+const clearNotes = () => ({
+  type: CLEAR_NOTES,
 });
 
 // ---------------- Thunk Actions -------------
@@ -78,7 +82,13 @@ export const deleteNoteThunk = (id) => async (dispatch) => {
     return deletedNote;
   }
 };
+// clear all notes in the state once logout
+export const logout = () => async (dispatch) => {
+  dispatch(clearNotes());
+  return null;
+};
 
+// ---------------- Notes Reducer -------------
 const initialState = {};
 
 export default function notesReducer(state = initialState, action) {
@@ -102,6 +112,8 @@ export default function notesReducer(state = initialState, action) {
       newState = { ...state };
       delete newState[action.note];
       return newState;
+    case CLEAR_NOTES:
+      return {};
     default:
       return state;
   }
