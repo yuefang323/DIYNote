@@ -6,7 +6,7 @@ import SignupFormModal from "../SignupFormModal";
 import logo from "../../Assets/logo.png";
 import "./Navigation.css";
 
-function Navigation() {
+function Navigation({isLoaded}) {
   const sessionUser = useSelector((state) => state.session.user);
 
   let sessionLinks;
@@ -31,7 +31,7 @@ function Navigation() {
             <span className="logo-text">DIYnote</span>
         </div>
         <div id="right-container">
-          <ul className="session-links">{!sessionUser && sessionLinks}</ul>
+          <ul className="session-links">{isLoaded && sessionLinks}</ul>
         </div>
     </nav>
   );

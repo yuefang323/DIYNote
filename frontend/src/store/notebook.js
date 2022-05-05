@@ -5,6 +5,7 @@ const GET_ALL_NOTEBOOKS = "notebooks/GET_ALL_NOTEBOOKS";
 const CREATE_NOTEBOOK = "notebooks/CREATE_NOTEBOOK";
 const UPDATE_NOTEBOOK = "notebooks/UPDATE_NOTEBOOK";
 const DELETE_NOTEBOOK = "notebooks/DELETE_NOTEBOOK";
+const CLEAR = "notebooks/CLEAR";
 
 // ---------------- Actions -----------
 // GET a user's all notebooks
@@ -32,6 +33,12 @@ export const deleteNotebook = (notebook) => ({
   type: DELETE_NOTEBOOK,
   notebook,
 });
+
+const clearNotebooks = () => {
+  return {
+    type: CLEAR,
+  };
+};
 
 // ---------------- Thunk Actions -------------
 // Thunk for getting all notebooks
@@ -93,6 +100,14 @@ export const deleteNotebookThunk = (id) => async (dispatch) => {
   }
 };
 
+export const logout = () => async (dispatch) => {
+  // const response = await csrfFetch("/api/session", {
+  //   method: "DELETE",
+  // });
+  dispatch(clearNotebooks());
+  return null;
+};
+
 const initialState = {};
 
 export default function notebooksReducer(state = initialState, action) {
@@ -121,6 +136,9 @@ export default function notebooksReducer(state = initialState, action) {
       newState = { ...state };
       delete newState[action.notebook];
       return newState;
+    case CLEAR:
+      // newState = null;
+      return {};
     default:
       return state;
   }

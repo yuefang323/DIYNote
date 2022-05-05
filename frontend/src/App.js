@@ -12,24 +12,22 @@ import ErrorPage from './components/ErrorPage'
 import LoginForm from "./components/LoginFormModal/LoginForm";
 
 function App() {
+  
+  const seesionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  const user = useSelector((state) => state.session.user);
-
   return (
     <>
+      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            {user ? <Redirect to="/home" /> : null}
+            {seesionUser ? <Redirect to="/home" /> : null}
             <SplashPage />
-          </Route>
-          <Route exact path='/login'>
-            <LoginForm />
           </Route>
           <Route exact path='/home'>
             <HomePage />

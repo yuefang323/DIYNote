@@ -13,7 +13,7 @@ const SplashPage = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <div className="splash-page-container">
         <div className="body-text">
           <h2>DIY your notes, color your life</h2>

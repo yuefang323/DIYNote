@@ -5,7 +5,7 @@ import "./Notebooks.css";
 
 import * as notebookActions from "../../store/notebook";
 
-function CreateNotebookForm({ showModal, setShowModal }) {
+function CreateNotebookPage({ showModal, setShowModal }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -54,4 +54,4 @@ function CreateNotebookForm({ showModal, setShowModal }) {
   );
 }
 
-export default CreateNotebookForm;
+export default CreateNotebookPage;

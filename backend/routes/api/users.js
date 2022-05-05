@@ -48,6 +48,7 @@ router.get(
   "/:userId/notebooks",
   asyncHandler(async (req, res) => {
     const userId = req.params.userId;
+    // console.log("........", userId);
     const notebooks = await Notebook.findAll({
       where: {
         userId,

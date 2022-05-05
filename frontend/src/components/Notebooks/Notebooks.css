@@ -1,0 +1,22 @@
+.a-solid.fa-notebook {
+  size: 100px;
+}
+#add-icon {
+  margin: 10px;
+  background-color: #1fb655;
+  border: 1px solid #1fb655;
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+  border-radius: 3px;
+  width: 300px;
+  transition-duration: 0.2s;
+}
+
+#add-icon:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+}
+i.fa-solid.fa-plus {
+    
+}

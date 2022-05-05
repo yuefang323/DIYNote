@@ -14,7 +14,6 @@ function Notes() {
   const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
-  const userId = sessionUser.id;
   const { notebookId } = useParams();
 
   const notes = useSelector((state) => state.notes);
@@ -37,9 +36,10 @@ function Notes() {
   const [currentContent, setCurrentContent] = useState("");
 
   useEffect(() => {
-    dispatch(noteActions.getAllNotesThunk(userId));
-  }, [dispatch]);
+    if (sessionUser) dispatch(noteActions.getAllNotesThunk(sessionUser.id));
+  }, [dispatch, sessionUser]);
 
+  if (!sessionUser) return <Redirect to="/" />;
   return (
     <div className="notes-container">
       <h1>Your Notes</h1>
