@@ -9,7 +9,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: rgba(0, 0, 0, 0.904); */
     background-color: rgba(0, 0, 0, 0.801);
     height: 5rem;
     flex-direction: column;
@@ -17,9 +16,9 @@ footer {
     padding: 5px 0;
   }
   
-  footer.logged-in-footer {
+  /* footer.logged-in-footer {
     height: 3rem;
-  }
+  } */
   
   .foot-stuff {
     display: flex;
@@ -36,16 +35,6 @@ footer {
     font-size: 15px;
   }
   
-  .copyright {
-    color: var(--soft-white);
-    padding: 10px 0px;
-    font-size: 15px;
-    display: flex;
-    justify-content: space-between;
-    width: fit-content;
-    min-width: 260px;
-  }
-  
   .about-me {
     display: flex;
   }
@@ -54,15 +43,14 @@ footer {
     margin: 0 10px;
   }
   
-  .fa-github,
-  .fa-linkedin {
+  .fa-github {
     font-size: 18px;
     transition-duration: 0.2s;
   }
   
   .fa-github:hover,
   .fa-linkedin:hover {
-    color: rgb(255, 255, 255);
+    color: #1FB655;
     transform: scale(1.4);
   }
   
@@ -71,6 +59,6 @@ footer {
   }
   
   .footer-text:hover {
-    color: white;
+    color: #1FB655;
     transform: scale(1.1);
   }

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-import SignupFormPage from "./SignupForm";
-import "./SignupForm.css";
+import SignupFormPage from "../SignupFormModal/SignupForm";
+import "../SignupFormModal/SignupForm.css";
 
-function SignupFormModal() {
+function SignupFreeModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       <button id="signup-modal" onClick={() => setShowModal(true)}>
-        Sign Up
+        Sign up for free
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
@@ -20,4 +20,4 @@ function SignupFormModal() {
   );
 }
 
-export default SignupFormModal;
+export default SignupFreeModal;
