@@ -25,7 +25,7 @@ function Navigation() {
     );
   }
   return (
-    <nav className="nav-bar">
+    <nav id="nav-bar">
         <div id="left-container">
             <img className="logo-image" src={logo} alt="DIYnote" />
             <span className="logo-text">DIYnote</span>

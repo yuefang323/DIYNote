@@ -30,7 +30,8 @@ input {
 }
 
 #signup-modal {
-  border: solid;
+  border: solid 2px;
+  border-radius: 6px;
   display: flex;
   justify-content: space-around;
   margin: 0;
@@ -40,6 +41,7 @@ input {
   cursor: pointer;
   text-align: center;
   font-weight: 500;
+  font-size: 16px;
 }
 
 #signup-modal:hover {

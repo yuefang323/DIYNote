@@ -19,14 +19,14 @@ const Footer = () => {
           <li>PostgreSQL</li>
         </ul>
       )}
-      <ul className="copyright">
+      <ul>
         <li className="footer-text">
           <a
             target="_blank"
             rel="noreferrer noopener"
             href="https://github.com/yuefang323/DIYnote"
           >
-            © 2022 | DIYnote
+          DIYnote
           </a>
         </li>
         <ul className="about-me">

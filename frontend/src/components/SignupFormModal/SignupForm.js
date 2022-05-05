@@ -47,7 +47,6 @@ function SignupFormPage() {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Username"
-        required
       />
       <input
         type="password"
@@ -60,7 +59,6 @@ function SignupFormPage() {
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
         placeholder="Confirmed Password"
-        required
       />
       <button className="signup-btn" type="submit">Sign Up</button>
     </form>
