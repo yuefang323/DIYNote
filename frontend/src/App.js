@@ -18,24 +18,18 @@ function App() {
   }, [dispatch]);
 
   const user = useSelector((state) => state.session.user);
-  const ProtectedRoute = (props) => {
-    return (
-      <Route {...props}>{user ? props.children : <Redirect to="/" />}</Route>
-    );
-  };
 
   return (
     <>
-      {/* <Navigation isLoaded={isLoaded} /> */}
       {isLoaded && (
         <Switch>
           <Route exact path="/">
             {user ? <Redirect to="/home" /> : null}
             <SplashPage />
           </Route>
-          <ProtectedRoute exact path='/home'>
+          <Route exact path='/home'>
             <HomePage />
-          </ProtectedRoute>
+          </Route>
           <Route path='/notebooks/:notebookId'>
             <Notes />
           </Route>

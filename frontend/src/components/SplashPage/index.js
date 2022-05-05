@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import "./SplashPage.css";
 import { Modal } from "../../context/Modal";
+import Navigation from "../Navigation";
 import SignupFormPage from "../SignupFormModal/SignupForm";
 import LoginForm from "../LoginFormModal/LoginForm";
 import Footer from "../Footer";
-import Navigation from "../Navigation";
 
-const SplashPage = ({ isLoaded }) => {
+const SplashPage = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-    
-     <Navigation isLoaded={isLoaded} />
+      <Navigation />
       <div className="splash-page-container">
         <div className="body-text">
           <h2>DIY your notes, color your life</h2>
