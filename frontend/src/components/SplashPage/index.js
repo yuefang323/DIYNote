@@ -1,10 +1,12 @@
-import React, { useState } from "react";
 import "./SplashPage.css";
+import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import Navigation from "../Navigation";
 import SignupFormPage from "../SignupFormModal/SignupForm";
-import LoginForm from "../LoginFormModal/LoginForm";
 import Footer from "../Footer";
+import { NavLink } from "react-router-dom";
+import HaveAccountModal from './HaveAccountModal'
+import SignupFreeModal from "./SignUpFreeModal";
 
 const SplashPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,27 +17,17 @@ const SplashPage = () => {
       <div className="splash-page-container">
         <div className="body-text">
           <h2>DIY your notes, color your life</h2>
-          <h3>
+          <br />
+          <h4>
             Utilize the DIYnote, remember everything and tackle any project.
-          </h3>
-          <h4>
-            <button onClick={() => setShowModal(true)}>Sign up for free</button>
-            {showModal && (
-              <Modal onClose={() => setShowModal(false)}>
-                <SignupFormPage />
-              </Modal>
-            )}
           </h4>
-          <h4>
-            <button id="login-link" onClick={() => setShowModal(true)}>
-              Already have an account? Log in
-            </button>
-            {showModal && (
-              <Modal onClose={() => setShowModal(false)}>
-                <LoginForm />
-              </Modal>
-            )}
-          </h4>
+          <div>
+            <SignupFreeModal />
+          </div>
+          <br />
+          <div>
+            <HaveAccountModal />
+          </div>
         </div>
       </div>
 

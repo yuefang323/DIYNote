@@ -1,8 +1,8 @@
-.signup-butt {
+.signup-btn {
   cursor: pointer;
-  background-color: #00c896;
-  border: 1px solid #00c896;
-  color: whitesmoke;
+  background-color: #1FB655;
+  border: 1px solid #1FB655;
+  color: black;
   padding: 10px;
   border-radius: 5px;
   width: 300px;
@@ -10,8 +10,38 @@
   transition-duration: 0.2s;
 }
 
-.signup-butt:hover {
-  background-color: #00c896ce;
-  border: 1px solid #00c896ce;
+.signup-btn:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
   transform: scale(1.03);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 350px;
+  min-width: 400px;
+}
+input {
+  margin: 10px;
+}
+
+#signup-modal {
+  border: solid;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  background: none;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+}
+
+#signup-modal:hover {
+  color: #1FB655;
 }

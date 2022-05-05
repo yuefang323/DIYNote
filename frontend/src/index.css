@@ -1,4 +1,4 @@
-
+/* site wide styles */
 *,
 body,
 html {
@@ -10,3 +10,4 @@ html {
     font-family: Helvetica, sans-serif;
     background-color: #F8F8F8;
 }
+

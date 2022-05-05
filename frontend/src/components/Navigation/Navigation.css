@@ -9,14 +9,10 @@ header {
   max-height: 67px;
 }
 
-.session-links {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.active-link {
-  border-bottom: 1px solid var(--soft-black);
+.nav-bar {
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #000000;
 }
 
 #left-container {
@@ -26,15 +22,11 @@ header {
   justify-self: flex-start;
   width: fit-content;
 }
-.logo{
-  display: flex;
-  justify-content: start;
-}
 
 .logo-text {
   font-family: Courier;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 35px;
   padding: 5px;
   color: black;
 }
@@ -56,13 +48,14 @@ header {
 }
 
 #right-container > .session-links {
-  display: flex;
+  /* display: flex; */
+  display: inline-flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 #login-modal > button {
     border: none;
-    display: inline-block;
+    /* display: inline-block; */
     margin: 0;
     background: none;
     background-color: white;
@@ -75,7 +68,7 @@ header {
     margin-left: 20px;
 }
 
-/* .logout {
+.logout {
   border: none;
   background: none;
   color: black;
@@ -87,7 +80,7 @@ header {
   transform: scale(1.5);
   color: white;
   cursor: pointer;
-} */
+}
 
 @media (max-width: 1350px) {
   .logo {

@@ -9,6 +9,7 @@ import Notebooks from "./components/Notebooks";
 import Notes from './components/Notes'
 import UpdateNotePage from "./components/Notes/UpdateNotePage";
 import ErrorPage from './components/ErrorPage'
+import LoginForm from "./components/LoginFormModal/LoginForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ function App() {
           <Route exact path="/">
             {user ? <Redirect to="/home" /> : null}
             <SplashPage />
+          </Route>
+          <Route exact path='/login'>
+            <LoginForm />
           </Route>
           <Route exact path='/home'>
             <HomePage />

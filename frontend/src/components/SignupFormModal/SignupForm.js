@@ -29,52 +29,40 @@ function SignupFormPage() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <img src="/favicon.png" alt="DIYnote"></img>
+      <h3>Welcome to DIYnote</h3>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <label>
-        Email
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder='Email Address'
-          required
-        />
-      </label>
-      <label>
-        Username
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder='Username'
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder='Password'
-          required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder='Confirmed Password'
-          required
-        />
-      </label>
-      <button type="submit">Sign Up</button>
+      <input
+        type="text"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email Address"
+      />
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Username"
+        required
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+      />
+      <input
+        type="password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        placeholder="Confirmed Password"
+        required
+      />
+      <button className="signup-btn" type="submit">Sign Up</button>
     </form>
   );
 }
