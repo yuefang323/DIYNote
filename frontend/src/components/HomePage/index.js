@@ -29,13 +29,13 @@ const HomePage = () => {
           <li className="my-notebooks">
             <NavLink to={`/users/${sessionUser.id}/notebooks`}>
               <i className="fa-solid fa-book fa-2x"></i>
-              <p>Your Notebooks</p>
+              <p>My Notebooks</p>
             </NavLink>
           </li>
           <li className="my-notes-link">
             <NavLink to={`/users/${sessionUser.id}/notes`}>
               <i className="fa-solid fa-book-open fa-2x"></i>
-              <p>Your Notes</p>
+              <p>My Notes</p>
             </NavLink>
           </li>
         </ul>
