@@ -13,7 +13,7 @@ const NoteDeleteConfirm = ({ showModal, noteId, userId, notebookId }) => {
   const deleteCurrentNote = async () => {
     const deletedNoteId = await dispatch(deleteNoteThunk(noteId));
     if (deletedNoteId) {
-      history.push(`/users/${userId}/home`);
+      history.push(`/users/${userId}/notes`);
       showModal(false);
     }
   };
