@@ -41,13 +41,13 @@ function UpdateNotebookPage({ showModal, setShowModal, notebookId }) {
       </ul>
       <div className="notebook-update-form">
         <label className="update-notebook-label">
-          Name:
           <input
             className="update-notebook-input"
             type="text"
             name="name"
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
+            placeholder='Enter a new name here...'
           />
         </label>
         <button className="update-notebook-submit" type="submit">

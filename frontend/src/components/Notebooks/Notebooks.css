@@ -40,6 +40,11 @@
     border-radius: 2px;
     cursor: pointer;
 }
+.fa-solid.fa-pen-to-square:hover {
+  /* background-color: #076c2b; */
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+}
 #delete-link {
   border: none;
 }
@@ -90,6 +95,40 @@ button.create-notebook-submit {
   font-weight: bold;
 }
 button.create-notebook-submit:hover {
+  margin: 10px;
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+}
+
+.update-notebook-form{
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+button.update-notebook-submit {
+  margin: 10px;
+  background-color: #1fb655;
+  border: none;
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  width: auto;
+  transition-duration: 0.2s;
+  font-weight: bold;
+}
+
+button.update-notebook-submit:hover {
   margin: 10px;
   background-color: #21dc62;
   border: 1px solid #21dc62;
