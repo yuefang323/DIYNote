@@ -2,7 +2,7 @@ import { csrfFetch } from "./csrf";
 
 // -------- Constants --------
 const GET_ALL_NOTEBOOKS = "notebooks/GET_ALL_NOTEBOOKS";
-const GET_ONE_NOTEBOOK = 'notebooks/GET_ONE_NOTEBOOK'
+// const GET_ONE_NOTEBOOK = 'notebooks/GET_ONE_NOTEBOOK'
 const CREATE_NOTEBOOK = "notebooks/CREATE_NOTEBOOK";
 const UPDATE_NOTEBOOK = "notebooks/UPDATE_NOTEBOOK";
 const DELETE_NOTEBOOK = "notebooks/DELETE_NOTEBOOK";
@@ -15,10 +15,10 @@ export const getAllNotebooks = (notebooks) => ({
   notebooks,
 });
 // GET a notebook 
-export const getOneNotebook = (notebook) => ({
-  type: GET_ONE_NOTEBOOK,
-  notebook,
-});
+// export const getOneNotebook = (notebook) => ({
+//   type: GET_ONE_NOTEBOOK,
+//   notebook,
+// });
 // POST a new notebook
 export const createNotebook = (newNotebook) => ({
   type: CREATE_NOTEBOOK,
@@ -50,14 +50,14 @@ export const getAllNotebooksThunk = (userId) => async (dispatch) => {
   }
 };
 // Thunk for getting a notebook 
-export const getOneNotebookThunk = (notebookId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/notebooks/${notebookId}`);
-  if (response.ok) {
-    const notebook = await response.json();
-    dispatch(getAllNotebooks(notebook));
-    return notebook;
-  }
-};
+// export const getOneNotebookThunk = (notebookId) => async (dispatch) => {
+//   const response = await csrfFetch(`/api/notebooks/${notebookId}`);
+//   if (response.ok) {
+//     const notebook = await response.json();
+//     dispatch(getAllNotebooks(notebook));
+//     return notebook;
+//   }
+// };
 // Thunk for creating a new notebook
 export const createNotebookThunk = (name, userId) => async (dispatch) => {
   const res = await csrfFetch(`/api/notebooks/`, {

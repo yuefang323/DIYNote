@@ -2,7 +2,7 @@ import { csrfFetch } from "./csrf";
 
 // -------- Constants --------
 const GET_NOTES = "notes/GET_NOTES";
-const GET_ONE_NOTE ='notes/GET_ONE_NOTE'
+const GET_ONE_NOTE = "notes/GET_ONE_NOTE";
 const CREATE_NOTE = "notes/CREATE_NOTE";
 const UPDATE_NOTE = "notes/UPDATE_NOTE";
 const DELETE_NOTE = "notes/DELETE_NOTE";
@@ -49,15 +49,17 @@ export const getAllNotesThunk = (userId) => async (dispatch) => {
   }
 };
 // Thunk for getting a note
-export const getOneNoteThunk = ({noteId}) => async (dispatch) => {
-  // console.log('......', noteId)
-  const response = await csrfFetch(`/api/notes/${noteId}`);
-  if (response.ok) {
-    const note = await response.json();
-    dispatch(getOneNote(note));
-    return note;
-  }
-};
+export const getOneNoteThunk =
+  ({ noteId }) =>
+  async (dispatch) => {
+    // console.log('......', noteId)
+    const response = await csrfFetch(`/api/notes/${noteId}`);
+    if (response.ok) {
+      const note = await response.json();
+      dispatch(getOneNote(note));
+      return note;
+    }
+  };
 // Thunk for creating a new note
 export const createNoteThunk = (newNote) => async (dispatch) => {
   const { title, content, notebookId, userId } = newNote;
@@ -97,8 +99,8 @@ export const deleteNoteThunk = (id) => async (dispatch) => {
     return deletedNote;
   }
 };
-// clear all notes in the state once logout
-export const logout = () => async (dispatch) => {
+// clear all notes in the state once logout or delete a notebook
+export const clearNotesThunk = () => async (dispatch) => {
   dispatch(clearNotes());
   return null;
 };
@@ -116,9 +118,9 @@ export default function notesReducer(state = initialState, action) {
       return newState;
     }
     case GET_ONE_NOTE: {
-      newState = {...state};
+      newState = { ...state };
       newState[action.note.id] = action.note;
-      return newState; 
+      return newState;
     }
     case CREATE_NOTE:
       newState = { ...state };

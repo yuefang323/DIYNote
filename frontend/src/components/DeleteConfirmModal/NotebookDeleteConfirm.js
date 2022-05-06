@@ -1,7 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { deleteNotebookThunk } from "../../store/notebook";
+import { clearNotesThunk } from "../../store/note";
 
 const NotebookDeleteConfirm = ({ showModal, notebookId, userId }) => {
   const history = useHistory();
@@ -9,6 +10,7 @@ const NotebookDeleteConfirm = ({ showModal, notebookId, userId }) => {
 
   const deleteCurrentNotebook = async () => {
     const deletedNotebookId = await dispatch(deleteNotebookThunk(notebookId));
+    const anything = await dispatch(clearNotesThunk());
     if (deletedNotebookId) {
       history.push(`/users/${userId}/home`);
       showModal(false);

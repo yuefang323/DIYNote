@@ -30,7 +30,7 @@ function ProfileButton({ user }) {
     e.preventDefault();
     dispatch(sessionActions.logout());
     dispatch(notebookActions.logout());
-    dispatch(noteActions.logout());
+    dispatch(noteActions.clearNotesThunk());
   };
 
   return (
@@ -43,7 +43,9 @@ function ProfileButton({ user }) {
           <li>{user.username}</li>
           <li>{user.email}</li>
           <li>
-            <button className="logout-btn" onClick={logout}>Log Out</button>
+            <button className="logout-btn" onClick={logout}>
+              Log Out
+            </button>
           </li>
         </ul>
       )}
