@@ -4,7 +4,7 @@ import DeleteConfirm from "./NoteDeleteConfirm";
 
 function DeleteConfirmModal({ noteId, userId, notebookId }) {
   const [showModal, setShowModal] = useState(false);
-  console.log('........', userId); 
+  // console.log('........', userId); 
   return (
     <>
       <button onClick={() => setShowModal(true)} id="delete-link">

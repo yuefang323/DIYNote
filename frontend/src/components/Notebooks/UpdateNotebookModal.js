@@ -9,8 +9,8 @@ function UpdateNotebookModal() {
 
   return (
     <>
-      <button id="add-icon" onClick={() => setShowModal(true)}>
-        <i class="fa-solid fa-pen-to-square"></i>
+      <button id="update-icon" onClick={() => setShowModal(true)}>
+        <i className="fa-solid fa-pen-to-square fa-2x"></i>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

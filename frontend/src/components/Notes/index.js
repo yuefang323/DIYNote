@@ -19,8 +19,8 @@ function Notes() {
   const notes = useSelector((state) => state.notes);
   const notesList = Object.values(notes);
   notesList.sort((a, b) => {
-    const keyA = new Date(a.createdAt);
-    const keyB = new Date(b.createdAt);
+    const keyA = new Date(a.updatedAt);
+    const keyB = new Date(b.updatedAt);
     return keyA > keyB ? -1 : 1;
   });
 
@@ -43,7 +43,7 @@ function Notes() {
   return (
     <div className="notes-container">
       <h1>Your Notes</h1>
-      <h2>{filteredNotes.length} Notes</h2>
+      <h2 className="user-notes">{filteredNotes.length} Notes</h2>
       {filteredNotes.map((note) => (
         <div className="note" key={note.id}>
           <h3 className="note-title">{note.title}</h3>
@@ -57,7 +57,7 @@ function Notes() {
             }}
             className="edit-btn"
           >
-            EDIT
+            <i className="fa-solid fa-pen-to-square fa-2x"></i>
           </button>
 
           {/* <button onClick={() => dispatch(noteActions.deleteNoteThunk(note.id, userId))} className='delete-btn'>DELETE</button> */}

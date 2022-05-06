@@ -19,8 +19,8 @@ function AllNotes() {
   const notes = useSelector((state) => state.notes);
   const notesList = Object.values(notes);
   notesList.sort((a, b) => {
-    const keyA = new Date(a.createdAt);
-    const keyB = new Date(b.createdAt);
+    const keyA = new Date(a.updatedAt);
+    const keyB = new Date(b.updatedAt);
     return keyA > keyB ? -1 : 1;
   });
 

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
 import Notebooks from "../Notebooks";
+import Footer from "../Footer";
 
 import "./HomePage.css";
 
@@ -23,18 +24,23 @@ const HomePage = () => {
     <div className="page-container">
       <h1 className="home-heading">Welcome {sessionUser.username}!</h1>
       <br />
-      <div className="links"> 
+      <div className="links">
         <ul>
-        <li className='my-notebooks'>
-          <NavLink to={`/users/${sessionUser.id}/notebooks`}>Your Notebooks
-          </NavLink>
-        </li>
-        <br />
-        <li className='my-notes'>
-          <NavLink to={`/users/${sessionUser.id}/notes`}>Your Notes</NavLink>
-        </li>
+          <li className="my-notebooks">
+            <NavLink to={`/users/${sessionUser.id}/notebooks`}>
+              <i className="fa-solid fa-book fa-2x"></i>
+              <p>Your Notebooks</p>
+            </NavLink>
+          </li>
+          <li className="my-notes-link">
+            <NavLink to={`/users/${sessionUser.id}/notes`}>
+              {/* <i className="fa-solid fa-notes fa-2x"></i> */}
+              <p>Your Notes</p>
+            </NavLink>
+          </li>
         </ul>
       </div>
+      <Footer />
     </div>
   );
 };

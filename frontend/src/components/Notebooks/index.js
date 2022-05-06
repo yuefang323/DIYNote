@@ -1,8 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, Link, useHistory } from "react-router-dom";
-import { Modal } from "../../context/Modal";
+import { Redirect, Link } from "react-router-dom";
 import NotebookDeleteConfirmModal from "../DeleteConfirmModal/NotebookDeleteModal";
 import "./Notebooks.css";
 
@@ -13,7 +12,6 @@ import * as notebookActions from "../../store/notebook";
 
 function Notebooks() {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
   useEffect(() => {
@@ -24,12 +22,10 @@ function Notebooks() {
   const notebooks = useSelector((state) => state.notebooks);
   const notebooksList = Object.values(notebooks);
   notebooksList.sort((a, b) => {
-    const keyA = new Date(a.createdAt);
-    const keyB = new Date(b.createdAt);
+    const keyA = new Date(a.updatedAt);
+    const keyB = new Date(b.updatedAt);
     return keyA > keyB ? -1 : 1;
   });
-
-  const [showModal, setShowModal] = useState(false);
 
   if (!sessionUser) return <Redirect to="/" />;
   return (
@@ -41,22 +37,7 @@ function Notebooks() {
           <Link to={`/notebooks/${notebook.id}`} className="notebook-link">
             Name: {notebook.name}
           </Link>
-          {/* <button
-            className="notebook-rename-btn"
-            onClick={() => setShowModal(true)}
-          >
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button> */}
-          {/* {showModal && (
-            <Modal onClose={() => setShowModal(false)}>
-              <UpdateNotebookPage
-                showModal={showModal}
-                setShowModal={setShowModal}
-              />
-            </Modal>
-          )} */}
           <UpdateNotebookModal />
-
           <NotebookDeleteConfirmModal
             notebookId={notebook.id}
             userId={sessionUser.id}
@@ -66,8 +47,6 @@ function Notebooks() {
       <div id="create-new-notebook">
         <CreateNotebookModal />
       </div>
-      {/* <img src='' alt='gif'/> */}
-      {/* <iframe src="https://giphy.com/embed/3oKGzvg3gGxSS3O38A" width="280" height="280" frameBorder="0" allowFullScreen></iframe> */}
     </div>
   );
 }
