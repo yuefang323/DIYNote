@@ -14,6 +14,7 @@
   background-color: #21dc62;
   border: 1px solid #21dc62;
   transform: scale(1.03);
+  color: black; 
 }
 
 form {
@@ -30,20 +31,23 @@ input {
 }
 
 #signup-modal {
-  border: solid 2px;
+  border: none;
   border-radius: 6px;
   display: flex;
   justify-content: space-around;
   margin: 0;
   background: none;
-  color: black;
+  color: #f8f8f8;
+  background-color: #1FB655;
   font-size: 16px;
   cursor: pointer;
   text-align: center;
   font-weight: 500;
   font-size: 16px;
+  padding: 5px 6px;
 }
 
 #signup-modal:hover {
-  color: #1FB655;
+  color: black;
+  background-color: #21dc62;
 }

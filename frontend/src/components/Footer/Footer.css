@@ -26,13 +26,14 @@ footer {
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    border-bottom: 2px solid #dfe0df9f;
+    border-bottom: 2px solid #49514932;
     min-width: 550px;
+    font-size: 13px;
   }
   
   .foot-stuff li {
     color: var(--soft-white);
-    font-size: 15px;
+    font-size: 12px;
   }
   
   ul.footer-about-me {
@@ -42,6 +43,8 @@ footer {
     justify-content: space-around;
     align-items: center;
     width: 90%;
+    font-size: 12px; 
+    color: rgb(135, 119, 153); 
   }
   
   .footer-about-me li {

@@ -17,4 +17,6 @@ html {
 
 button, a {
   cursor: pointer;
+  border: none; 
+  color: black
 }
