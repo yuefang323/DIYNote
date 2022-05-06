@@ -16,10 +16,10 @@ li.my-notes-link {
   height: 100px;
   width: 100px;
 }
-/* i.fa-solid.fa-notes.fa-2x {
-  z-index: 100;
-  background-color: black; */
-/* } */
+.fa-solid.fa-book.fa-2x {
+
+}
+.fa-solid.fa-book-open fa-2x
 .links {
   /* margin-left: 30%; */
   align-items: center;
