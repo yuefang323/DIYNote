@@ -23,11 +23,10 @@ const HomePage = () => {
     <div className="page-container">
       <h1 className="home-heading">Welcome {sessionUser.username}!</h1>
       <br />
-      <div>
+      <div className="links"> 
         <ul>
         <li className='my-notebooks'>
-          <NavLink to={`/users/${sessionUser.id}/notebooks`}>
-            Your Notebooks
+          <NavLink to={`/users/${sessionUser.id}/notebooks`}>Your Notebooks
           </NavLink>
         </li>
         <br />

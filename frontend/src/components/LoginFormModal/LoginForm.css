@@ -5,11 +5,12 @@
   border-radius: 3px;
   width: 300px;
   transition-duration: 0.2s;
+  border: none;
 }
 .login-button {
   margin: 10px;
-  background-color: #1FB655;
-  border: 1px solid #1FB655;
+  background-color: #1fb655;
+  border: 1px solid #1fb655;
 }
 
 .login-button:hover {
@@ -36,7 +37,7 @@
 }
 
 #login-modal:hover {
-  color: #1FB655;
+  color: #1fb655;
 }
 form {
   display: flex;
@@ -47,7 +48,6 @@ form {
   min-height: 350px;
 }
 input {
-    margin: 10px; 
-    min-width: 300px;
+  margin: 10px;
+  min-width: 300px;
 }
-
