@@ -3,17 +3,17 @@ import { useHistory, useParams } from "react-router-dom";
 
 import { deleteNoteThunk } from "../../store/note";
 
-const NoteDeleteConfirm = ({ showModal, noteId }) => {
+const NoteDeleteConfirm = ({ showModal, noteId, userId, notebookId }) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const { notebookId } = useParams();
+  // const { notebookId } = useParams();
   // console.log("/////", noteId);
   // console.log("..........", notebookId);
   const deleteCurrentNote = async () => {
     const deletedNoteId = await dispatch(deleteNoteThunk(noteId));
     if (deletedNoteId) {
-      history.push(`/notebooks/${notebookId}`);
+      history.push(`/users/${userId}/home`);
       showModal(false);
     }
   };

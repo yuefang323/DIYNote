@@ -7,7 +7,7 @@ import NotebookDeleteConfirmModal from "../DeleteConfirmModal/NotebookDeleteModa
 import "./Notebooks.css";
 
 import CreateNotebookModal from "./CreateNotebookModal";
-import UpdateNotebookPage from "./UpdateNotebookPage";
+import UpdateNotebookModal from "./UpdateNotebookModal";
 
 import * as notebookActions from "../../store/notebook";
 
@@ -41,22 +41,26 @@ function Notebooks() {
           <Link to={`/notebooks/${notebook.id}`} className="notebook-link">
             Name: {notebook.name}
           </Link>
-          <button
+          {/* <button
             className="notebook-rename-btn"
             onClick={() => setShowModal(true)}
           >
             <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          {showModal && (
+          </button> */}
+          {/* {showModal && (
             <Modal onClose={() => setShowModal(false)}>
               <UpdateNotebookPage
                 showModal={showModal}
                 setShowModal={setShowModal}
               />
             </Modal>
-          )}
+          )} */}
+          <UpdateNotebookModal />
 
-          <NotebookDeleteConfirmModal notebookId={notebook.id} />
+          <NotebookDeleteConfirmModal
+            notebookId={notebook.id}
+            userId={sessionUser.id}
+          />
         </div>
       ))}
       <div id="create-new-notebook">

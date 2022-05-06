@@ -61,7 +61,7 @@ function AllNotes() {
           </button>
 
           {/* <button onClick={() => dispatch(noteActions.deleteNoteThunk(note.id, userId))} className='delete-btn'>DELETE</button> */}
-          <NoteDeleteConfirmModal noteId={note.id} />
+          <NoteDeleteConfirmModal noteId={note.id} userId={sessionUser.id} notebookId={notebookId} />
         </div>
       ))}
 

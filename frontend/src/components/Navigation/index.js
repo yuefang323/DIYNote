@@ -64,7 +64,6 @@ function Navigation({ isLoaded }) {
           </div>
         </div>
       </nav>
-      <Footer />
     </>
   );
 }

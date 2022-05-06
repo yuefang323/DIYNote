@@ -31,7 +31,7 @@ function UpdateNotebookPage({ showModal, setShowModal }) {
   };
   return (
     <form onSubmit={handleSubmit} className="update-notebook-form">
-      <h2 className="update-notebook-name">Update a new notebook</h2>
+      <h2 className="update-notebook-name">Update a notebook</h2>
       <ul className="update-notebook-errors">
         {errors && errors.map((error) => <li key={error}>{error}</li>)}
       </ul>

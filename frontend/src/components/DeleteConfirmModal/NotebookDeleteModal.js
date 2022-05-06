@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import NotebookDeleteConfirm from "./NotebookDeleteConfirm";
-import "./DeleteConfirm.css"
+import "./DeleteConfirm.css";
 
-
-function NotebookDeleteConfirmModal({ notebookId }) {
+function NotebookDeleteConfirmModal({ notebookId, userId }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -14,7 +13,11 @@ function NotebookDeleteConfirmModal({ notebookId }) {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <NotebookDeleteConfirm showModal={setShowModal} notebookId={notebookId} />
+          <NotebookDeleteConfirm
+            showModal={setShowModal}
+            notebookId={notebookId}
+            userId={userId}
+          />
         </Modal>
       )}
     </>
