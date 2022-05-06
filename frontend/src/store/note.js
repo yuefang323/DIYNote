@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 // -------- Constants --------
 const GET_NOTES = "notes/GET_NOTES";
+const GET_ONE_NOTE ='notes/GET_ONE_NOTE'
 const CREATE_NOTE = "notes/CREATE_NOTE";
 const UPDATE_NOTE = "notes/UPDATE_NOTE";
 const DELETE_NOTE = "notes/DELETE_NOTE";
@@ -12,7 +13,11 @@ export const getAllNotes = (notes) => ({
   type: GET_NOTES,
   notes,
 });
-
+// GET a note
+export const getOneNote = (note) => ({
+  type: GET_ONE_NOTE,
+  note,
+});
 // POST a new note
 export const createNote = (newNote) => ({
   type: CREATE_NOTE,
@@ -41,6 +46,16 @@ export const getAllNotesThunk = (userId) => async (dispatch) => {
     const notes = await response.json();
     dispatch(getAllNotes(notes));
     return notes;
+  }
+};
+// Thunk for getting a note
+export const getOneNoteThunk = ({noteId}) => async (dispatch) => {
+  // console.log('......', noteId)
+  const response = await csrfFetch(`/api/notes/${noteId}`);
+  if (response.ok) {
+    const note = await response.json();
+    dispatch(getOneNote(note));
+    return note;
   }
 };
 // Thunk for creating a new note
@@ -99,6 +114,11 @@ export default function notesReducer(state = initialState, action) {
       newState = { ...state };
       action.notes.forEach((note) => (newState[note.id] = note));
       return newState;
+    }
+    case GET_ONE_NOTE: {
+      newState = {...state};
+      newState[action.note.id] = action.note;
+      return newState; 
     }
     case CREATE_NOTE:
       newState = { ...state };

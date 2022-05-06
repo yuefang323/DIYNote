@@ -19,6 +19,7 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
   const [title, setTitle] = useState(oldNote.title);
   const [content, setContent] = useState(oldNote.content);
   const [errors, setErrors] = useState([]);
+  const [submitClicked, setSubmitClicked] = useState(false);
 
   if (!sessionUser) return <Redirect to="/" />;
   const userId = sessionUser.id;
@@ -41,6 +42,21 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
     dispatch(noteActions.updateNoteThunk(updatedNote, noteId));
     history.goBack();
   };
+
+  const cancelButton = async (e) => {
+    if(content) {
+      if(window.confirm('Are you sure???')) {
+        const oldNote = await dispatch(
+          noteActions.getOneNoteThunk({ noteId })
+        )
+        // console.log(noteId, '..........')
+        setTitle(oldNote.title);
+        setContent(oldNote.content);
+        setSubmitClicked(false);
+        history.push(`/users/${userId}/notes`);
+      }
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit} className="edit-notebook-form">
@@ -71,10 +87,10 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
           />
         </label>
 
-        <button className="edit-note-submit" type="submit">
+        <button className="edit-note-submit" type="submit" onClick={() => setSubmitClicked(true)}>
           Submit
         </button>
-        <button className="edit-note-submit" type="submit">
+        <button className="edit-note-submit" onClick={cancelButton} type="reset">
           Cancel
         </button>
       </div>
