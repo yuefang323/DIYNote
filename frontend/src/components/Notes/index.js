@@ -65,7 +65,7 @@ function Notes() {
         </div>
       ))}
 
-      <button onClick={() => setShowModal(true)} className="create-btn">
+      <button onClick={() => setShowModal(true)} className="add-btn">
         Create New Note
       </button>
       {showModal && (

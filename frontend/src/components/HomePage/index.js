@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import Notebooks from "../Notebooks";
 
 import "./HomePage.css";
 
 const HomePage = () => {
-//   const dispatch = useDispatch();
+  //   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   // const notebooks = useSelector(state => state?.notebooks?.notebooks);
   // const notes = useSelector(state => state?.notes?.notes);
@@ -22,7 +22,20 @@ const HomePage = () => {
   return (
     <div className="page-container">
       <h1 className="home-heading">Welcome {sessionUser.username}!</h1>
-      <Notebooks />
+      <br />
+      <div>
+        <ul>
+        <li className='my-notebooks'>
+          <NavLink to={`/users/${sessionUser.id}/notebooks`}>
+            My Notebooks
+          </NavLink>
+        </li>
+        <br />
+        <li className='my-notes'>
+          <NavLink to={`/users/${sessionUser.id}/notes`}>My Notes</NavLink>
+        </li>
+        </ul>
+      </div>
     </div>
   );
 };

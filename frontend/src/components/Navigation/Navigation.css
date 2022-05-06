@@ -46,7 +46,14 @@ nav {
   padding-bottom: 1px;
   margin-left: 20px;
 }
-
+#center-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+}
 #right-container {
   display: inline-flex;
   align-items: center;
