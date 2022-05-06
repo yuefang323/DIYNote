@@ -122,6 +122,17 @@ a {
   color: white;
   cursor: pointer;
 }
+.fa-solid.fa-user.fa-2x {
+  /* background-color: #1fb655; */
+  font-weight: 100px;
+  border: none;
+
+}
+.fa-solid.fa-user.fa-2x:hover {
+  transform: scale(1.5);
+  color: #1fb655;
+  cursor: pointer;
+}
 
 .profile-dropdown {
   position: absolute;

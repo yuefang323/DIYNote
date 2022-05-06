@@ -37,15 +37,17 @@ function CreateNotebookPage({ showModal, setShowModal }) {
       </ul>
       <div className="notebook-create-form">
         <label className="create-notebook-label">
-          Name:
+          {/* Name: */}
           <input
             className="create-notebook-input"
             type="text"
             name="name"
             value={inputVal}
+            placeholder='Enter a notebook title here...'
             onChange={(e) => setInputVal(e.target.value)}
           />
         </label>
+        <br></br>
         <button className="create-notebook-submit" type="submit">
           Submit
         </button>

@@ -5,7 +5,6 @@ import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import logo from "../../Assets/logo.png";
 import { NavLink } from "react-router-dom";
-import Footer from "../Footer";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -18,7 +17,7 @@ function Navigation({ isLoaded }) {
     centerLinks = (
       <>
         <li className="nav-butt home">
-          <NavLink to={`/users/${sessionUser.id}/home`}>
+          <NavLink to={`/home`}>
             {/* <i className="fa-solid fa-house-user fa-2x"></i> */}
             Home
           </NavLink>

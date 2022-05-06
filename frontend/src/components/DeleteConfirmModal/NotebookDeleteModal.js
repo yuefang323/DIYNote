@@ -8,6 +8,7 @@ function NotebookDeleteConfirmModal({ notebookId, userId }) {
 
   return (
     <>
+    <div id="delete-notebook-modal">
       <button onClick={() => setShowModal(true)} id="delete-link">
         <i className="fa-solid fa-trash-can fa-2x"></i>
       </button>
@@ -20,6 +21,7 @@ function NotebookDeleteConfirmModal({ notebookId, userId }) {
           />
         </Modal>
       )}
+      </div>
     </>
   );
 }

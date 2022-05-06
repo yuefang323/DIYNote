@@ -16,10 +16,24 @@ li.my-notes-link {
   height: 100px;
   width: 100px;
 }
-/* i.fa-solid.fa-notes.fa-2x {
-  z-index: 100;
-  background-color: black; */
-/* } */
+.fa-solid.fa-book.fa-2x {
+  padding: 5px; 
+  margin-bottom: 5px;
+}
+.fa-solid.fa-book.fa-2x:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+  transform: scale(1.03);
+}
+.fa-solid.fa-book-open.fa-2x {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.fa-solid.fa-book-open.fa-2x:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+  transform: scale(1.03);
+}
 .links {
   /* margin-left: 30%; */
   align-items: center;

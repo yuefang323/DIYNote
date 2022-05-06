@@ -30,12 +30,15 @@ function Notebooks() {
   if (!sessionUser) return <Redirect to="/" />;
   return (
     <div className="notebook-container">
-      <h2>{sessionUser.username}'s Notebooks</h2>
-      <h3>{notebooksList.length} Notebooks</h3>
+      <h2 className="user-name">{sessionUser.username}'s Notebooks</h2>
+      <h3 className="notebooks-count">You have {notebooksList.length} Notebooks</h3>
       {notebooksList.map((notebook) => (
         <div className="notebook-title" key={notebook.id}>
           <Link to={`/notebooks/${notebook.id}`} className="notebook-link">
-            Name: {notebook.name}
+            Notebook Title: {notebook.name}
+            <p className="updated-time">
+            Updated At: {notebook.updatedAt}
+            </p>
           </Link>
           <UpdateNotebookModal notebookId={notebook.id} />
           <NotebookDeleteConfirmModal
