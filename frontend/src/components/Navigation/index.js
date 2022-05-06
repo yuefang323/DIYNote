@@ -5,27 +5,31 @@ import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import logo from "../../Assets/logo.png";
 import { NavLink } from "react-router-dom";
+import Footer from "../Footer";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
 
   let sessionLinks;
-  let centerLinks; 
+  let centerLinks;
   if (sessionUser) {
     sessionLinks = <ProfileButton user={sessionUser} />;
     centerLinks = (
       <>
         <li className="nav-butt home">
-          <NavLink to={`/users/${sessionUser.id}/home`}>Home</NavLink>
+          <NavLink to={`/users/${sessionUser.id}/home`}>
+            {/* <i className="fa-solid fa-house-user fa-2x"></i> */}
+            Home
+          </NavLink>
         </li>
         <li className="nav-butt my-notebooks">
           <NavLink to={`/users/${sessionUser.id}/notebooks`}>
-            My Notebooks
+            MyNotebooks
           </NavLink>
         </li>
         <li className="nav-butt my-notes">
-          <NavLink to={`/users/${sessionUser.id}/notes`}>My Notes</NavLink>
+          <NavLink to={`/users/${sessionUser.id}/notes`}>MyNotes</NavLink>
         </li>
         {/* <li>
           <i className="fa-duotone fa-backward"></i>
@@ -45,20 +49,23 @@ function Navigation({ isLoaded }) {
     );
   }
   return (
-    <nav>
-      <div id="nav-bar">
-        <div id="left-container">
-          <img className="logo-image" src={logo} alt="DIYnote" />
-          <span className="logo-text">DIYnote</span>
+    <>
+      <nav>
+        <div id="nav-bar">
+          <div id="left-container">
+            <img className="logo-image" src={logo} alt="DIYnote" />
+            <span className="logo-text">DIYnote</span>
+          </div>
+          <div id="center-links">
+            <ul className="session-links-a">{isLoaded && centerLinks}</ul>
+          </div>
+          <div id="right-links">
+            <ul className="session-links-b">{isLoaded && sessionLinks}</ul>
+          </div>
         </div>
-        <div id="center-container">
-          <ul className="center-links">{isLoaded && centerLinks}</ul>
-        </div>
-        <div id="right-container">
-          <ul className="session-links">{isLoaded && sessionLinks}</ul>
-        </div>
-      </div>
-    </nav>
+      </nav>
+      <Footer />
+    </>
   );
 }
 

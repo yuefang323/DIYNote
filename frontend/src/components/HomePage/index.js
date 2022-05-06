@@ -27,12 +27,12 @@ const HomePage = () => {
         <ul>
         <li className='my-notebooks'>
           <NavLink to={`/users/${sessionUser.id}/notebooks`}>
-            My Notebooks
+            Your Notebooks
           </NavLink>
         </li>
         <br />
         <li className='my-notes'>
-          <NavLink to={`/users/${sessionUser.id}/notes`}>My Notes</NavLink>
+          <NavLink to={`/users/${sessionUser.id}/notes`}>Your Notes</NavLink>
         </li>
         </ul>
       </div>
