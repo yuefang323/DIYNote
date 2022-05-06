@@ -58,6 +58,7 @@ export const createNotebookThunk = (name, userId) => async (dispatch) => {
 };
 // Thunk for updating a notebook
 export const updateNotebookThunk = (id, name) => async (dispatch) => {
+  console.log('.....',id)
   const res = await csrfFetch(`/api/notebooks/${id}`, {
     method: "PUT",
     body: JSON.stringify({ name }),

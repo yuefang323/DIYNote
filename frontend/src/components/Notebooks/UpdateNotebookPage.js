@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect, useHistory, useParams } from "react-router-dom";
 import "./Notebooks.css";
 
 import * as notebookActions from "../../store/notebook";
@@ -11,7 +11,9 @@ function UpdateNotebookPage({ showModal, setShowModal }) {
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
-
+  const { notebookId }= useParams(); 
+  console.log(useParams(), '.........xxxx')
+  console.log('xxxxxx', notebookId)
   const [inputVal, setInputVal] = useState("");
   const [errors, setErrors] = useState([]);
 
@@ -25,8 +27,8 @@ function UpdateNotebookPage({ showModal, setShowModal }) {
       setErrors(validateErrors);
       return;
     }
-
-    dispatch(notebookActions.updateNotebookThunk(inputVal, userId));
+    // console.log('///////////', notebookId)
+    dispatch(notebookActions.updateNotebookThunk(notebookId, inputVal));
     setShowModal(false);
   };
   return (
