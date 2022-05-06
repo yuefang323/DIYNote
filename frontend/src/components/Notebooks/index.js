@@ -37,7 +37,7 @@ function Notebooks() {
           <Link to={`/notebooks/${notebook.id}`} className="notebook-link">
             Name: {notebook.name}
           </Link>
-          <UpdateNotebookModal />
+          <UpdateNotebookModal notebookId={notebook.id} />
           <NotebookDeleteConfirmModal
             notebookId={notebook.id}
             userId={sessionUser.id}

@@ -4,7 +4,8 @@ import UpdateNotebookPage from "./UpdateNotebookPage";
 
 import "./Notebooks.css";
 
-function UpdateNotebookModal() {
+function UpdateNotebookModal(notebookId) {
+  notebookId = notebookId.notebookId;
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -17,6 +18,7 @@ function UpdateNotebookModal() {
           <UpdateNotebookPage
             showModal={showModal}
             setShowModal={setShowModal}
+            notebookId={notebookId}
           />
         </Modal>
       )}

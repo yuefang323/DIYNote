@@ -5,15 +5,17 @@ import "./Notebooks.css";
 
 import * as notebookActions from "../../store/notebook";
 
-function UpdateNotebookPage({ showModal, setShowModal }) {
+function UpdateNotebookPage({ showModal, setShowModal, notebookId }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
-  const { notebookId }= useParams(); 
-  console.log(useParams(), '.........xxxx')
-  console.log('xxxxxx', notebookId)
+  // const updatedNotebookId = await dispatch(deleteNotebookThunk(notebookId));
+
+  // const { notebookId }= useParams();
+  console.log(useParams(), ".........xxxx");
+  console.log("xxxxxx", notebookId);
   const [inputVal, setInputVal] = useState("");
   const [errors, setErrors] = useState([]);
 
