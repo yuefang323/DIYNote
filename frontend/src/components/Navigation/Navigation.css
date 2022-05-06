@@ -84,6 +84,7 @@ nav {
   height: 30px;
   /* width: 300px; */
   font-size: larger;
+  gap: 5px; 
 }
 .session-links-b {
   display: inline-flex;
@@ -167,34 +168,8 @@ a {
   background-color: #21dc62;
   border: 1px solid #21dc62;
 }
-/* .nav-butt.home{
-  margin: 5px;
-  position: absolute;
-  left: 3px; 
-  right: 3px; 
-  top: 0;
-  bottom: 0px;
-} */
+li.nav-butt.my-notebooks {
+  border-left: 3px solid grey; 
+  border-right: 3px solid grey;
+}
 
-
-/* #nav-bar {
-  height: fit-content;
-  border: 2px solid #dfe0df9f;
-  width: auto; 
-  background-color: black;
-} */
-
-/* @media (max-width: 1350px) {
-  #left-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    width: 80vw;
-  }
-
-  #left-container {
-    min-width: 101px;
-  }
-  #right-container {
-    min-width: 101px;
-  }
-} */
