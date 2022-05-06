@@ -6,7 +6,9 @@ import "./Footer.css";
 const Footer = () => {
   const sessionUser = useSelector((state) => state.session.user);
   return (
-    <footer className={!sessionUser? "splash-page-footer" : "logged-in-footer"}>
+    <footer
+      className={!sessionUser ? "splash-page-footer" : "logged-in-footer"}
+    >
       {true && (
         <ul className="foot-stuff">
           <li>Javascript</li>
@@ -19,18 +21,17 @@ const Footer = () => {
           <li>PostgreSQL</li>
         </ul>
       )}
-      <ul>
+      <ul className="footer-about-me">
         <li className="footer-text">
           <a
             target="_blank"
             rel="noreferrer noopener"
             href="https://github.com/yuefang323/DIYnote"
           >
-          DIYnote
+            DIYnote
           </a>
         </li>
-        <ul className="about-me">
-          <li className="footer-text">
+        <li className="footer-text">
             <a href="mailto: yuefang323@gmail.com">yuefang323@gmail.com</a>
           </li>
           <li>
@@ -42,7 +43,6 @@ const Footer = () => {
               <i className="fab fa-github" />
             </a>
           </li>
-        </ul>
       </ul>
     </footer>
   );

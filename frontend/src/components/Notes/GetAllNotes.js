@@ -9,7 +9,7 @@ import * as noteActions from "../../store/note";
 import CreateNotePage from "./CreateNotePage";
 import NoteDeleteConfirmModal from "../DeleteConfirmModal/NoteDeleteModal";
 
-function Notes() {
+function AllNotes() {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -24,9 +24,9 @@ function Notes() {
     return keyA > keyB ? -1 : 1;
   });
 
-  const filteredNotes = notesList.filter(
-    (note) => note.notebookId === Number(notebookId)
-  );
+//   const filteredNotes = notesList.filter(
+//     (note) => note.notebookId === Number(notebookId)
+//   );
 
   const [showModal, setShowModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
@@ -43,8 +43,8 @@ function Notes() {
   return (
     <div className="notes-container">
       <h1>Your Notes</h1>
-      <h2 className="user-notes">{filteredNotes.length} Notes</h2>
-      {filteredNotes.map((note) => (
+      <h2>{ notesList.length} Notes</h2>
+      {notesList.map((note) => (
         <div className="note" key={note.id}>
           <h3 className="note-title">{note.title}</h3>
 
@@ -57,15 +57,15 @@ function Notes() {
             }}
             className="edit-btn"
           >
-            <i className="fa-solid fa-pen-to-square fa-2x"></i>
+            EDIT
           </button>
 
           {/* <button onClick={() => dispatch(noteActions.deleteNoteThunk(note.id, userId))} className='delete-btn'>DELETE</button> */}
-          <NoteDeleteConfirmModal noteId={note.id} notebookId={notebookId} userId={sessionUser.id} />
+          <NoteDeleteConfirmModal noteId={note.id} userId={sessionUser.id} notebookId={notebookId} />
         </div>
       ))}
 
-      <button onClick={() => setShowModal(true)} className="add-btn">
+      <button onClick={() => setShowModal(true)} className="create-btn">
         Create New Note
       </button>
       {showModal && (
@@ -81,4 +81,4 @@ function Notes() {
   );
 }
 
-export default Notes;
+export default AllNotes;

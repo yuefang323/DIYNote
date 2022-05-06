@@ -1,0 +1,45 @@
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  top: 80px;
+  bottom: 20%; 
+  left: 10%; 
+  height: fit-content;
+  width: 100%;
+}
+
+.add-btn {
+    margin: 10px;
+    background-color: #1fb655;
+    border: 1px solid #1fb655;
+    cursor: pointer;
+    color: black;
+    padding: 10px;
+    border-radius: 3px;
+    width: 300px;
+    transition-duration: 0.2s;
+  }
+
+  h2.user-notes {
+    bottom: 2px solid black;
+    padding: 20px;
+  }
+button.create-btn {
+  margin: 10px;
+  background-color: #1fb655;
+  border: none;
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  width: auto;
+  transition-duration: 0.2s;
+  font-weight: bold;
+}
+button.create-btn:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+}

@@ -1,0 +1,9 @@
+.fa-solid.fa-trash-can {
+    /* background-color: #076c2b; */
+    color: black;
+    border: none;
+    height: 30px;
+    margin: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
