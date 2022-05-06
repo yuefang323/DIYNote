@@ -12,7 +12,7 @@ const NotebookDeleteConfirm = ({ showModal, notebookId, userId }) => {
     const deletedNotebookId = await dispatch(deleteNotebookThunk(notebookId));
     const anything = await dispatch(clearNotesThunk());
     if (deletedNotebookId) {
-      history.push(`/users/${userId}/home`);
+      history.push(`/users/${userId}/notebooks`);
       showModal(false);
     }
   };
