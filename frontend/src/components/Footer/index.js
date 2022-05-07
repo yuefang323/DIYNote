@@ -31,18 +31,18 @@ const Footer = () => {
             DIYnote
           </a>
         </li>
-        <li className="footer-text">
-            <a href="mailto: yuefang323@gmail.com">yuefang323@gmail.com</a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              rel="noreferrer noopener"
-              href="https://github.com/yuefang323"
-            >
-              <i className="fab fa-github" />
-            </a>
-          </li>
+        {/* <li className="footer-text">
+          <a href="mailto: yuefang323@gmail.com">yuefang323@gmail.com</a>
+        </li> */}
+        <li>
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://github.com/yuefang323"
+          >
+            <i className="fab fa-github" />
+          </a>
+        </li>
       </ul>
     </footer>
   );

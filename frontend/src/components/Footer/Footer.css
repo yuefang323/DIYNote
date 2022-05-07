@@ -47,11 +47,6 @@ footer {
     color: rgb(135, 119, 153); 
   }
   
-  .footer-about-me li {
-    justify-content: space-between;
-    /* padding: 10px; */
-  }
-  
   .fa-github {
     font-size: 18px;
     transition-duration: 0.2s;
