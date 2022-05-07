@@ -18,7 +18,14 @@ html {
 button, a {
   cursor: pointer;
   border: none; 
-  color: black
+  color: rgb(41, 38, 38); 
+}
+button, a:hover {
+  background-color: #21dc62;
+  border: #21dc62;
+  border-radius: 5px;
+  transform: scale(1.03);
+  cursor: pointer;
 }
 input {
   padding: 5px;
