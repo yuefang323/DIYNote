@@ -66,3 +66,7 @@ footer {
     color: #1FB655;
     transform: scale(1.1);
   }
+  a.DIY-text:hover {
+    background-color: transparent;
+    transform: scale(2.0);
+  }

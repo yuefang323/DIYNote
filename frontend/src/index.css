@@ -20,7 +20,7 @@ button, a {
   border: none; 
   color: rgb(41, 38, 38); 
 }
-button, a:hover {
+a:hover {
   background-color: #21dc62;
   border: #21dc62;
   border-radius: 5px;

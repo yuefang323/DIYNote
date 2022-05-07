@@ -27,6 +27,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer noopener"
             href="https://github.com/yuefang323/DIYnote"
+            className="DIY-text"
           >
             DIYnote
           </a>

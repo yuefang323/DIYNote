@@ -17,18 +17,18 @@ function Navigation({ isLoaded }) {
     centerLinks = (
       <>
         <li className="nav-butt home">
-          <NavLink to={`/home`} className='home-btn'>
+          <NavLink to={`/home`} className='nav-butt home-btn'>
             {/* <i className="fa-solid fa-house-user fa-2x"></i> */}
             Home
           </NavLink>
         </li>
         <li className="nav-butt my-notebooks">
-          <NavLink to={`/users/${sessionUser.id}/notebooks`} className=''>
+          <NavLink to={`/users/${sessionUser.id}/notebooks`} className='nav-butt my-notebooks'>
             MyNotebooks
           </NavLink>
         </li>
         <li className="nav-butt my-notes">
-          <NavLink to={`/users/${sessionUser.id}/notes`}>MyNotes</NavLink>
+          <NavLink to={`/users/${sessionUser.id}/notes`} className='nav-butt my-notes'>MyNotes</NavLink>
         </li>
         {/* <li>
           <i className="fa-duotone fa-backward"></i>
