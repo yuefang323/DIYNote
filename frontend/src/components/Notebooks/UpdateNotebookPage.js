@@ -14,8 +14,8 @@ function UpdateNotebookPage({ showModal, setShowModal, notebookId }) {
   // const updatedNotebookId = await dispatch(deleteNotebookThunk(notebookId));
 
   // const { notebookId }= useParams();
-  console.log(useParams(), ".........xxxx");
-  console.log("xxxxxx", notebookId);
+  // console.log(useParams(), ".........xxxx");
+  // console.log("xxxxxx", notebookId);
   const [inputVal, setInputVal] = useState("");
   const [errors, setErrors] = useState([]);
 
