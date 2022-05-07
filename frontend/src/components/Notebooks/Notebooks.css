@@ -9,13 +9,15 @@
     left: 10%; 
     height: fit-content;
     width: 100%;
+    margin-top: 30px; 
+    margin-bottom: 30px;
 }
 
 .a-solid.fa-notebook {
   size: 100px;
 }
 #add-icon {
-  margin: 10px;
+  margin-top: 40px;
   background-color: #1fb655;
   border: none;
   cursor: pointer;
@@ -30,6 +32,7 @@
 #add-icon:hover {
   background-color: #21dc62;
   border: 1px solid #21dc62;
+  color: black; 
 }
 .fa-solid.fa-pen-to-square {
     /* background-color: #076c2b; */
@@ -58,7 +61,7 @@
 }
 h2.user-name {
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 h3.notebooks-count {
   margin: 20px 10px; 
@@ -139,8 +142,16 @@ button.update-notebook-submit:hover {
   border: 1px solid #21dc62;
 }
 a.notebook-link {
-  /* font-size: 10px; */
+  /* font-weight: bold; */
+  font-size: 20px;
 }
 p.updated-time {
   font-size: 10px;
+}
+h3.notebooks-count {
+  border: 2px solid #1fb655;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%; 
+  margin-bottom: 20px;
 }

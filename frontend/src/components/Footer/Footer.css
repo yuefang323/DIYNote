@@ -52,8 +52,7 @@ footer {
     transition-duration: 0.2s;
   }
   
-  .fa-github:hover,
-  .fa-linkedin:hover {
+  .fa-github:hover {
     color: #1FB655;
     transform: scale(1.4);
   }

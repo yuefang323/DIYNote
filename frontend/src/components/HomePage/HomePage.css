@@ -17,7 +17,7 @@ li.my-notes-link {
   width: 100px;
 }
 .fa-solid.fa-book.fa-2x {
-  padding: 5px; 
+  padding: 5px;
   margin-bottom: 5px;
   margin-top: 10px;
 }
@@ -26,6 +26,7 @@ li.my-notes-link {
   border: 1px solid #21dc62;
   border-radius: 5px;
   transform: scale(1.03);
+  color: orange;
 }
 .fa-solid.fa-book-open.fa-2x {
   padding: 5px;
@@ -36,6 +37,7 @@ li.my-notes-link {
   border: 1px solid #21dc62;
   transform: scale(1.03);
   border-radius: 5px;
+  color: orange;
 }
 .links {
   /* margin-left: 30%; */
@@ -45,4 +47,20 @@ li.my-notes-link {
 }
 .home-heading {
   margin-bottom: 10px;
+}
+p.my-notes-link:hover {
+  background-color: #21dc62;
+  border: #21dc62;
+  border-radius: 5px;
+  transform: scale(1.03);
+  cursor: pointer;
+  color: whitesmoke;
+}
+p.my-notebooks-link:hover {
+  background-color: #21dc62;
+  border: #21dc62;
+  border-radius: 5px;
+  transform: scale(1.03);
+  cursor: pointer;
+  color: whitesmoke;
 }
