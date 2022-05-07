@@ -17,13 +17,13 @@ function Navigation({ isLoaded }) {
     centerLinks = (
       <>
         <li className="nav-butt home">
-          <NavLink to={`/home`}>
+          <NavLink to={`/home`} className='home-btn'>
             {/* <i className="fa-solid fa-house-user fa-2x"></i> */}
             Home
           </NavLink>
         </li>
         <li className="nav-butt my-notebooks">
-          <NavLink to={`/users/${sessionUser.id}/notebooks`}>
+          <NavLink to={`/users/${sessionUser.id}/notebooks`} className=''>
             MyNotebooks
           </NavLink>
         </li>

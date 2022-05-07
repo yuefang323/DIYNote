@@ -19,7 +19,7 @@
   background-color: #1fb655;
   border: none;
   cursor: pointer;
-  color: black;
+  color:  #f8f8f8;
   padding: 10px;
   border-radius: 5px;
   width: auto;
@@ -53,7 +53,8 @@
 }
 .updated-time {
   display: relative;
-  margin-left: 8px;
+  margin-left: 1px;
+  margin-top: 10px;
 }
 h2.user-name {
   margin-left: 10px;
@@ -63,8 +64,12 @@ h3.notebooks-count {
   margin: 20px 10px; 
   font-size: 20px;
 }
-.notebook-title {
+.notebook-detail {
   font-size: 15px;
+  border-bottom: #1fb655 solid;
+  display: flex; 
+  justify-content: flex-start;
+  width: 80%;
 }
 
 .create-notebook-form{
@@ -132,4 +137,10 @@ button.update-notebook-submit:hover {
   margin: 10px;
   background-color: #21dc62;
   border: 1px solid #21dc62;
+}
+a.notebook-link {
+  /* font-size: 10px; */
+}
+p.updated-time {
+  font-size: 10px;
 }

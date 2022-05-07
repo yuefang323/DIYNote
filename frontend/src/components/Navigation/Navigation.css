@@ -168,8 +168,17 @@ a {
   background-color: #21dc62;
   border: 1px solid #21dc62;
 }
-li.nav-butt.my-notebooks {
-  border-left: 3px solid grey; 
-  border-right: 3px solid grey;
+/* li.nav-butt.my-notebooks:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
 }
+li.nav-butt.my-notes:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62; 
+}
+li.nav-butt.home:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62; 
+} */
+
 
