@@ -28,31 +28,40 @@
   border: 1px solid #21dc62;
 }
 
-/* #delete-notebook-modal {
-    border: none;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    color: black;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: 500;
-    font-size: 16px;
-    margin-bottom: 10px;
-} */
-div.modal-content {
-    border: none;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    color: black;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: 500;
-    font-size: 16px;
-    margin-bottom: 10px;
-    height: 80px;
-    width: 30px;
+div.notebook-delete-form {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+  height: 200px;
+  width: 200px;
+  padding: 10px; 
+  border-radius: 5px;
+  background-color: #efd76c; 
+}
+h4.warning-message {
+  background-color: #FDEFB3; 
+  padding: 10px;
+  border-radius: 5px;
+  color: red; 
+}
+button.yes-button {
+  /* border: 1px solid;  */
+  border-radius: 5px;
+  background-color: #FDEFB3; 
+  padding: 10px;
+  margin-top: 10px;
+  color: red; 
+  font-weight: bold;
+}
+div#modal-content {
+  background-color: #efd76c;
 }

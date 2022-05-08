@@ -111,6 +111,7 @@ button.create-notebook-submit:hover {
 
 .update-notebook-form{
   border: none;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   margin: 0;
@@ -122,14 +123,14 @@ button.create-notebook-submit:hover {
   font-size: 16px;
   gap: 10px;
   margin-bottom: 10px;
+  background-color: #efd76c;
 }
-
 button.update-notebook-submit {
   margin: 10px;
   background-color: #1fb655;
   border: none;
   cursor: pointer;
-  color: black;
+  color: whitesmoke;
   padding: 10px;
   border-radius: 5px;
   width: auto;
@@ -141,10 +142,12 @@ button.update-notebook-submit:hover {
   margin: 10px;
   background-color: #21dc62;
   border: 1px solid #21dc62;
+  color: black;
 }
 a.notebook-link {
   /* font-weight: bold; */
   font-size: 20px;
+  /* color: whitesmoke;  */
 }
 p.updated-time {
   font-size: 10px;
@@ -156,7 +159,24 @@ h3.notebooks-count {
   width: 80%; 
   margin-bottom: 20px;
 }
-a.notebook-link:hover {
-  color: whitesmoke; 
-  /* border: none; */
+/* a.notebook-link:hover {
+  background-color: aqua;
+  color: white; 
+  border: none;
+} */
+h2.update-notebook-name {
+  background-color: #FDEFB3;
+  border-radius: 5px;
+  padding: 10px;
+}
+.notebook-update-form {
+  background-color: #FDEFB3;
+  border-radius: 5px;
+  margin: 10px; 
+}
+.update-notebook-input {
+  background-color: #FDEFB3;
+}
+.update-notebook-label {
+  background-color: #FDEFB3
 }
