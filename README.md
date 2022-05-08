@@ -1,5 +1,12 @@
-# DIYNote
+# DIYnote
 
+DIYnote, an [Evernote](https://evernote.com/) clone, is a website where users can take notes and categorize notes by using notebooks. 
+
+Welcome to check out a live version of DIYnote here: [diynote.com](https://diynote.herokuapp.com/)
+
+- [Database Schema](https://github.com/yuefang323/DIYnote/wiki/Database-Schema)
+
+- [MVP Feature List](https://github.com/yuefang323/DIYnote/wiki/MVP-Feature-List)
 
 # Technologies Used
 ## Frontend
@@ -43,3 +50,8 @@
 7. Open up two terminals and cd into the backend and frontend directories, respectively. Start the server in each by running:
 
    ```npm start```
+
+# Splash Page & User Authentication
+A user can sign up or log in with an existing account in this page. Alternatively, a user can explore the web as a Demo user. 
+![Splash Page]
+![Demo Login]
