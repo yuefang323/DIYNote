@@ -8,7 +8,7 @@ function DeleteConfirmModal({ noteId, userId, notebookId }) {
   return (
     <>
       <button onClick={() => setShowModal(true)} id="delete-link">
-        <i className="fa-solid fa-trash-can"></i>
+        <i className="fa-solid fa-trash-can fa-2x"></i>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
