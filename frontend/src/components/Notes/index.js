@@ -54,10 +54,10 @@ function Notes() {
           <h3 className="note-title">{note.title}</h3>
           <div className="note-content-container">
             <div className="note-detail-container">
-            <h4 className="note-content">{note.content}</h4>
+              <h4 className="note-content">{note.content}</h4>
               <h4>Updated At: {new Date(note.updatedAt).toDateString()}</h4>
             </div>
-          {/* <button
+            {/* <button
             onClick={() => {
               setCurrentTitle(note.title);
               setCurrentContent(note.content);
@@ -67,14 +67,16 @@ function Notes() {
           >
             <i className="fa-solid fa-pen-to-square fa-2x"></i>
           </button> */}
-          <UpdateNotePageModal noteId={note.id} />
+            <h4 className="buttons">
+              <UpdateNotePageModal noteId={note.id} />
 
-          {/* <button onClick={() => dispatch(noteActions.deleteNoteThunk(note.id, userId))} className='delete-btn'>DELETE</button> */}
-          <NoteDeleteConfirmModal
-            noteId={note.id}
-            notebookId={notebookId}
-            userId={sessionUser.id}
-          />
+              {/* <button onClick={() => dispatch(noteActions.deleteNoteThunk(note.id, userId))} className='delete-btn'>DELETE</button> */}
+              <NoteDeleteConfirmModal
+                noteId={note.id}
+                notebookId={notebookId}
+                userId={sessionUser.id}
+              />
+            </h4>
           </div>
         </div>
       ))}
