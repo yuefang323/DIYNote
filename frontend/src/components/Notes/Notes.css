@@ -95,7 +95,8 @@ h3.note-title {
   padding: 10px;
 }
 h2.create-note-title {
-  background-color: #efd76c
+  background-color: #efd76c; 
+  padding: 10px;
 }
 div.note-create-form {
   background-color: #efd76c; 
@@ -137,3 +138,17 @@ button.create-note-submit {
   font-weight: bold;
   margin-left: 130px; 
 }
+/* .update-note-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    top: 80px;
+    bottom: 20%;
+    left: 10%;
+    height: fit-content;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+} */

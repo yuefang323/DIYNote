@@ -53,7 +53,8 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
         setTitle(oldNote.title);
         setContent(oldNote.content);
         setSubmitClicked(false);
-        history.push(`/users/${userId}/notes`);
+        // history.push(`/users/${userId}/notes`);
+        history.goBack(); 
       }
     }
   }

@@ -65,7 +65,7 @@ function CreateNotePage ({showModal, setShowModal, notebookId}) {
                         name='content'
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder='Content'
+                        placeholder='Enter note content here...'
                     />
                 </label>
                 <button className='create-note-submit' type="submit">Submit</button>
