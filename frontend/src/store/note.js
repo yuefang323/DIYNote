@@ -77,9 +77,11 @@ export const createNoteThunk = (newNote) => async (dispatch) => {
 // Thunk for updating a note
 export const updateNoteThunk = (updatedNote, id) => async (dispatch) => {
   const { title, content, notebookId, userId } = updatedNote;
+  const notebookIdInt = parseInt(notebookId);
+  console.log("notebookId", typeof notebookIdInt);
   const res = await csrfFetch(`/api/notes/${id}`, {
     method: "PUT",
-    body: JSON.stringify({ title, content, notebookId, userId }),
+    body: JSON.stringify({ title, content, notebookIdInt, userId }),
   });
   if (res.ok) {
     const updatedNote = await res.json();
