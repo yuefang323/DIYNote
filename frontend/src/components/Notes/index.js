@@ -45,13 +45,18 @@ function Notes() {
   if (!sessionUser) return <Redirect to="/" />;
   return (
     <div className="notes-container">
-      <h1>Your Notes</h1>
-      <h2 className="user-notes">{filteredNotes.length} Notes</h2>
+      <h2>{sessionUser.username}'s Notes</h2>
+      <h2 className="user-notes">
+        This notebook have {filteredNotes.length} Notes
+      </h2>
       {filteredNotes.map((note) => (
-        <div className="note" key={note.id}>
+        <div className="note-detail" key={note.id}>
           <h3 className="note-title">{note.title}</h3>
-
-          <p className="note-content">{note.content}</p>
+          <div className="note-content-container">
+            <div className="note-detail-container">
+            <h4 className="note-content">{note.content}</h4>
+              <h4>Updated At: {new Date(note.updatedAt).toDateString()}</h4>
+            </div>
           {/* <button
             onClick={() => {
               setCurrentTitle(note.title);
