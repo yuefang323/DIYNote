@@ -8,6 +8,7 @@ import * as noteActions from "../../store/note";
 
 import CreateNotePage from "./CreateNotePage";
 import NoteDeleteConfirmModal from "../DeleteConfirmModal/NoteDeleteModal";
+import UpdateNotePageModal from "./UpdateNotePageModal";
 
 function Notes() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function Notes() {
 
   const notes = useSelector((state) => state.notes);
   const notesList = Object.values(notes);
+  console.log("notesList", notesList);
   notesList.sort((a, b) => {
     const keyA = new Date(a.updatedAt);
     const keyB = new Date(b.updatedAt);
@@ -27,6 +29,7 @@ function Notes() {
   const filteredNotes = notesList.filter(
     (note) => note.notebookId === Number(notebookId)
   );
+  console.log("filteredNotes", filteredNotes);
 
   const [showModal, setShowModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
@@ -42,37 +45,31 @@ function Notes() {
   if (!sessionUser) return <Redirect to="/" />;
   return (
     <div className="notes-container">
-      <h2>{sessionUser.username}'s Notes</h2>
-      <h2 className="user-notes">
-        This notebook have {filteredNotes.length} Notes
-      </h2>
+      <h1>Your Notes</h1>
+      <h2 className="user-notes">{filteredNotes.length} Notes</h2>
       {filteredNotes.map((note) => (
-        <div className="note-detail" key={note.id}>
+        <div className="note" key={note.id}>
           <h3 className="note-title">{note.title}</h3>
-          <div className="note-content-container">
-            <div className="note-detail-container">
-              <h4 className="note-content">{note.content}</h4>
-              <h4>Updated At: {new Date(note.updatedAt).toDateString()}</h4>
-            </div>
-            <h4 className="buttons">
-              <button
-                onClick={() => {
-                  setCurrentTitle(note.title);
-                  setCurrentContent(note.content);
-                  history.push(`/notes/${note.id}`);
-                }}
-                className="edit-btn"
-              >
-                <i className="fa-solid fa-pen-to-square fa-2x"></i>
-              </button>
-              {/* <button onClick={() => dispatch(noteActions.deleteNoteThunk(note.id, userId))} className='delete-btn'>DELETE</button> */}
-              <NoteDeleteConfirmModal
-                noteId={note.id}
-                notebookId={notebookId}
-                userId={sessionUser.id}
-              />
-            </h4>
-          </div>
+
+          <p className="note-content">{note.content}</p>
+          {/* <button
+            onClick={() => {
+              setCurrentTitle(note.title);
+              setCurrentContent(note.content);
+              history.push(`/notes/${note.id}`);
+            }}
+            className="edit-btn"
+          >
+            <i className="fa-solid fa-pen-to-square fa-2x"></i>
+          </button> */}
+          <UpdateNotePageModal noteId={note.id} />
+
+          {/* <button onClick={() => dispatch(noteActions.deleteNoteThunk(note.id, userId))} className='delete-btn'>DELETE</button> */}
+          <NoteDeleteConfirmModal
+            noteId={note.id}
+            notebookId={notebookId}
+            userId={sessionUser.id}
+          />
         </div>
       ))}
 

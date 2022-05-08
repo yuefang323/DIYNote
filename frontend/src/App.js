@@ -40,9 +40,9 @@ function App() {
           <Route path="/notebooks/:notebookId">
             <Notes />
           </Route>
-          <Route path="/notes/:noteId">
+          {/* <Route path="/notes/:noteId">
             <UpdateNotePage />
-          </Route>
+          </Route> */}
           <Route>
             <ErrorPage />
           </Route>

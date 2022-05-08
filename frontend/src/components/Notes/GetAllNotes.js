@@ -8,6 +8,7 @@ import * as noteActions from "../../store/note";
 
 import CreateNotePage from "./CreateNotePage";
 import NoteDeleteConfirmModal from "../DeleteConfirmModal/NoteDeleteModal";
+import UpdateNotePageModal from "./UpdateNotePageModal";
 
 function AllNotes() {
   const dispatch = useDispatch();
@@ -53,7 +54,7 @@ function AllNotes() {
               <h4>Updated At: {new Date(note.updatedAt).toDateString()}</h4>
             </div>
             <h4 className="buttons">
-              <button
+              {/* <button
                 onClick={() => {
                   setCurrentTitle(note.title);
                   setCurrentContent(note.content);
@@ -62,7 +63,9 @@ function AllNotes() {
                 className="edit-btn"
               >
                 <i className="fa-solid fa-pen-to-square fa-2x"></i>
-              </button>
+              </button> */}
+
+              <UpdateNotePageModal noteId={note.id} />
 
               {/* <button onClick={() => dispatch(noteActions.deleteNoteThunk(note.id, userId))} className='delete-btn'>DELETE</button> */}
               <NoteDeleteConfirmModal

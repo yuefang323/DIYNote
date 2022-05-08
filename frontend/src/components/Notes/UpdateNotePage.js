@@ -5,17 +5,16 @@ import "./Notes.css";
 
 import * as noteActions from "../../store/note";
 
-function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
+function UpdateNotePage({ showModal, setShowModal, noteId }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
 
   const notes = useSelector((state) => state.notes);
-  const { notebookId, noteId } = useParams();
+  const { notebookId } = useParams();
 
   const oldNote = notes[noteId];
-  // console.log('......', oldNote)
 
   const [title, setTitle] = useState(oldNote.title);
   const [content, setContent] = useState(oldNote.content);
@@ -41,19 +40,21 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
       userId,
     };
     dispatch(noteActions.updateNoteThunk(updatedNote, noteId));
-    history.goBack();
+    // history.goBack();
+    setShowModal(false);
+    // history.push(window.location.pathname);
   };
 
   const cancelButton = async (e) => {
     if (content) {
       if (window.confirm("Are you sure???")) {
         const oldNote = await dispatch(noteActions.getOneNoteThunk({ noteId }));
-        // console.log(noteId, '..........')
         setTitle(oldNote.title);
         setContent(oldNote.content);
         setSubmitClicked(false);
         // history.push(`/users/${userId}/notes`);
-        history.goBack();
+        // history.goBack();
+        setShowModal(false);
       }
     }
   };
@@ -66,7 +67,7 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
       </ul>
       <div className="note-edit-form">
         <label className="edit-note-label">
-          Title: 
+          Title:
           <input
             className="edit-note-input"
             type="text"
