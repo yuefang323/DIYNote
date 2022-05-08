@@ -75,6 +75,7 @@ function Notes() {
             notebookId={notebookId}
             userId={sessionUser.id}
           />
+          </div>
         </div>
       ))}
 
