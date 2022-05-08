@@ -60,12 +60,13 @@
   margin-top: 10px;
 }
 h2.user-name {
-  margin-left: 10px;
+  margin-left: 4px;
   margin-bottom: 20px;
 }
 h3.notebooks-count {
   margin: 20px 10px; 
   font-size: 20px;
+  margin-left: 0; 
 }
 .notebook-detail {
   font-size: 15px;
@@ -154,4 +155,8 @@ h3.notebooks-count {
   padding: 10px;
   width: 80%; 
   margin-bottom: 20px;
+}
+a.notebook-link:hover {
+  color: whitesmoke; 
+  /* border: none; */
 }
