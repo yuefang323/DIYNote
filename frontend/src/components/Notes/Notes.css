@@ -2,33 +2,33 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
   position: relative;
   top: 80px;
-  bottom: 20%; 
-  left: 10%; 
+  bottom: 20%;
+  left: 10%;
   height: fit-content;
   width: 100%;
-  margin-top: 30px; 
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
 .add-btn {
-    margin: 10px;
-    background-color: #1fb655;
-    border: 1px solid #1fb655;
-    cursor: pointer;
-    color: black;
-    padding: 10px;
-    border-radius: 3px;
-    width: 300px;
-    transition-duration: 0.2s;
-  }
+  margin: 10px;
+  background-color: #1fb655;
+  border: 1px solid #1fb655;
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+  border-radius: 3px;
+  width: 300px;
+  transition-duration: 0.2s;
+}
 
-  h2.user-notes {
-    bottom: 2px solid black;
-    padding: 20px;
-  }
+h2.user-notes {
+  bottom: 2px solid black;
+  padding: 20px;
+}
 button.create-btn {
   margin: 10px;
   background-color: #1fb655;
@@ -44,4 +44,18 @@ button.create-btn {
 button.create-btn:hover {
   background-color: #21dc62;
   border: 1px solid #21dc62;
+}
+div.note-detail {
+  font-size: 15px;
+  border-bottom: #1fb655 solid;
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+}
+div.note-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

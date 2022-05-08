@@ -89,6 +89,7 @@ h3.notebooks-count {
   font-size: 16px;
   gap: 10px;
   margin-bottom: 10px;
+  background-color: #efd76c;
 }
 
 button.create-notebook-submit {
@@ -174,9 +175,29 @@ h2.update-notebook-name {
   border-radius: 5px;
   margin: 10px; 
 }
-.update-notebook-input {
+/* .update-notebook-input {
   background-color: #FDEFB3;
-}
+} */
 .update-notebook-label {
   background-color: #FDEFB3
+}
+h2.create-notebook-name {
+  background-color: #FDEFB3;
+  border-radius: 5px;
+  padding: 10px;
+}
+.notebook-create-form {
+  background-color: #FDEFB3;
+  border-radius: 5px;
+  padding: 10px;
+}
+/* input.create-notebook-input {
+  background-color: #FDEFB3;
+  border-radius: 5px;
+  padding: 10px;
+} */
+label.create-notebook-label {
+  background-color: #FDEFB3;
+  border-radius: 5px;
+  padding: 10px;
 }

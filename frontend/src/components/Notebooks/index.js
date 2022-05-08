@@ -31,20 +31,22 @@ function Notebooks() {
   return (
     <div className="notebook-container">
       <h2 className="user-name">{sessionUser.username}'s Notebooks</h2>
-      <h3 className="notebooks-count">You have {notebooksList.length} Notebooks</h3>
+      <h3 className="notebooks-count">
+        You have {notebooksList.length} Notebooks
+      </h3>
       {notebooksList.map((notebook) => (
         <div className="notebook-detail" key={notebook.id}>
           <Link to={`/notebooks/${notebook.id}`} className="notebook-link">
             {notebook.name}
             <p className="updated-time">
-            Updated At: {new Date(notebook.updatedAt).toDateString()}
+              Updated At: {new Date(notebook.updatedAt).toDateString()}
             </p>
           </Link>
-          <UpdateNotebookModal notebookId={notebook.id} />
-          <NotebookDeleteConfirmModal
-            notebookId={notebook.id}
-            userId={sessionUser.id}
-          />
+            <UpdateNotebookModal notebookId={notebook.id} />
+            <NotebookDeleteConfirmModal
+              notebookId={notebook.id}
+              userId={sessionUser.id}
+            />
         </div>
       ))}
       <div id="create-new-notebook">
