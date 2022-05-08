@@ -116,6 +116,7 @@ a {
 }
 .logout {
   border: none;
+  /* border-radius: 5px; */
   background: none;
   color: black;
   font-size: 25px;
@@ -167,10 +168,13 @@ a {
   /* margin-right: 20px; */
   background-color: #1fb655;
   border: 1px solid #1fb655;
+  color: whitesmoke;
+  border-radius: 5px;
 }
 .logout-btn:hover {
   background-color: #21dc62;
   border: 1px solid #21dc62;
+  color: black; 
 }
 a.nav-butt:hover {
   background-color: #21dc62;

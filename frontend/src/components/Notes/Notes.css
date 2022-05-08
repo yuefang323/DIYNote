@@ -48,7 +48,7 @@ button.create-btn {
   background-color: #1fb655;
   border: none;
   cursor: pointer;
-  color: black;
+  color: whitesmoke;
   padding: 10px;
   border-radius: 5px;
   width: auto;
@@ -58,6 +58,7 @@ button.create-btn {
 button.create-btn:hover {
   background-color: #21dc62;
   border: 1px solid #21dc62;
+  color: black; 
 }
 div.note-detail {
   font-size: 15px;
@@ -130,7 +131,7 @@ button.create-note-submit {
   background-color: #1fb655;
   border: none;
   cursor: pointer;
-  color: black;
+  color: whitesmoke;
   padding: 10px;
   border-radius: 5px;
   width: auto;
@@ -138,7 +139,12 @@ button.create-note-submit {
   font-weight: bold;
   margin-left: 130px; 
 }
-/* .update-note-form {
+button.create-note-submit:hover {
+  color: black; 
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+}
+.edit-note-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,4 +157,74 @@ button.create-note-submit {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
-} */
+}
+h2.edit-note-title {
+  margin: 20px 
+}
+div.note-edit-form {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+div.update-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 20px;
+  gap: 10px; 
+  background-color: #efd76c;
+}
+
+input.edit-note-input {
+  border: 1px solid; 
+  margin-left: 30px;
+  width: 500px;
+}
+.edit-note-text {
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-top: 10px; 
+  width: 500px;
+  border: solid, black;
+}
+label.edit-note-label {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-self: center;
+}
+button.edit-note-submit {
+  margin: 10px;
+  background-color: #1fb655;
+  border: 1px solid #1fb655;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 3px;
+  width: 300px;
+  transition-duration: 0.2s;
+  margin-left: 0;
+  margin-top: 30px;
+}
+button.edit-note-submit:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+  color: black; 
+}
+h1.your-notes-title {
+  margin-left: 4px;
+  margin-bottom: 20px;
+}
+h2.notes-count {
+  margin: 20px 10px; 
+  font-size: 20px;
+  margin-left: 0; 
+}
