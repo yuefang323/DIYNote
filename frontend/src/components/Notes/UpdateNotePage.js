@@ -15,6 +15,7 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
   const { notebookId, noteId } = useParams();
 
   const oldNote = notes[noteId];
+  // console.log('......', oldNote)
 
   const [title, setTitle] = useState(oldNote.title);
   const [content, setContent] = useState(oldNote.content);
@@ -44,29 +45,28 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
   };
 
   const cancelButton = async (e) => {
-    if(content) {
-      if(window.confirm('Are you sure???')) {
-        const oldNote = await dispatch(
-          noteActions.getOneNoteThunk({ noteId })
-        )
+    if (content) {
+      if (window.confirm("Are you sure???")) {
+        const oldNote = await dispatch(noteActions.getOneNoteThunk({ noteId }));
         // console.log(noteId, '..........')
         setTitle(oldNote.title);
         setContent(oldNote.content);
         setSubmitClicked(false);
-        history.push(`/users/${userId}/notes`);
+        // history.push(`/users/${userId}/notes`);
+        history.goBack();
       }
     }
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="edit-notebook-form">
+    <form onSubmit={handleSubmit} className="edit-note-form">
       <h2 className="edit-note-title">Update your note</h2>
       <ul className="edit-note-errors">
         {errors && errors.map((error) => <li key={error}>{error}</li>)}
       </ul>
       <div className="note-edit-form">
         <label className="edit-note-label">
-          Title
+          Title: 
           <input
             className="edit-note-input"
             type="text"
@@ -77,7 +77,7 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
         </label>
 
         <label className="edit-note-label">
-          Content
+          Content:
           <textarea
             className="edit-note-text"
             type="text"
@@ -86,13 +86,22 @@ function UpdateNotePage({ editModal, setEditModal, noteTitle, noteContent }) {
             onChange={(e) => setContent(e.target.value)}
           />
         </label>
-
-        <button className="edit-note-submit" type="submit" onClick={() => setSubmitClicked(true)}>
-          Submit
-        </button>
-        <button className="edit-note-submit" onClick={cancelButton} type="reset">
-          Cancel
-        </button>
+        <div className="update-buttons">
+          <button
+            className="edit-note-submit"
+            type="submit"
+            onClick={() => setSubmitClicked(true)}
+          >
+            Submit
+          </button>
+          <button
+            className="edit-note-submit"
+            onClick={cancelButton}
+            type="reset"
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </form>
   );

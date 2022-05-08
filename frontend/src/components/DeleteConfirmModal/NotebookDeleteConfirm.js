@@ -21,10 +21,10 @@ const NotebookDeleteConfirm = ({ showModal, notebookId, userId }) => {
 
   return (
     <div className="notebook-delete-form">
-      <h4>Do you really want to delete this notebook? It will delete all notes
+      <h4 className="warning-message">Do you really want to delete this notebook? It will delete all notes
       included in this notebook!
       </h4>
-      <button type="submit" onClick={deleteCurrentNotebook}>
+      <button className="yes-button" type="submit" onClick={deleteCurrentNotebook}>
         Yes
       </button>
     </div>

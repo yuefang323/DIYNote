@@ -60,12 +60,13 @@
   margin-top: 10px;
 }
 h2.user-name {
-  margin-left: 10px;
+  margin-left: 4px;
   margin-bottom: 20px;
 }
 h3.notebooks-count {
   margin: 20px 10px; 
   font-size: 20px;
+  margin-left: 0; 
 }
 .notebook-detail {
   font-size: 15px;
@@ -88,6 +89,7 @@ h3.notebooks-count {
   font-size: 16px;
   gap: 10px;
   margin-bottom: 10px;
+  background-color: #efd76c;
 }
 
 button.create-notebook-submit {
@@ -95,7 +97,7 @@ button.create-notebook-submit {
   background-color: #1fb655;
   border: none;
   cursor: pointer;
-  color: black;
+  color: whitesmoke;
   padding: 10px;
   border-radius: 5px;
   width: auto;
@@ -106,10 +108,12 @@ button.create-notebook-submit:hover {
   margin: 10px;
   background-color: #21dc62;
   border: 1px solid #21dc62;
+  color: black; 
 }
 
 .update-notebook-form{
   border: none;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   margin: 0;
@@ -121,14 +125,15 @@ button.create-notebook-submit:hover {
   font-size: 16px;
   gap: 10px;
   margin-bottom: 10px;
+  background-color: #efd76c;
+  /* background-color: #FDEFB3; */
 }
-
 button.update-notebook-submit {
   margin: 10px;
   background-color: #1fb655;
   border: none;
   cursor: pointer;
-  color: black;
+  color: whitesmoke;
   padding: 10px;
   border-radius: 5px;
   width: auto;
@@ -140,10 +145,12 @@ button.update-notebook-submit:hover {
   margin: 10px;
   background-color: #21dc62;
   border: 1px solid #21dc62;
+  color: black;
 }
 a.notebook-link {
   /* font-weight: bold; */
   font-size: 20px;
+  /* color: whitesmoke;  */
 }
 p.updated-time {
   font-size: 10px;
@@ -154,4 +161,45 @@ h3.notebooks-count {
   padding: 10px;
   width: 80%; 
   margin-bottom: 20px;
+}
+/* a.notebook-link:hover {
+  background-color: aqua;
+  color: white; 
+  border: none;
+} */
+h2.update-notebook-name {
+  background-color: #efd76c;
+  border-radius: 5px;
+  padding: 10px;
+}
+.notebook-update-form {
+  background-color: #efd76c;
+  border-radius: 5px;
+  margin: 10px; 
+}
+/* .update-notebook-input {
+  background-color: #FDEFB3;
+} */
+.update-notebook-label {
+  background-color: #efd76c; 
+}
+h2.create-notebook-name {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+}
+.notebook-create-form {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+}
+/* input.create-notebook-input {
+  background-color: #FDEFB3;
+  border-radius: 5px;
+  padding: 10px;
+} */
+label.create-notebook-label {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
 }

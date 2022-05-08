@@ -9,7 +9,7 @@ const ErrorPage = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      history.push("/");
+      history.goBack();
     }, 5000);
   }, [history]);
 

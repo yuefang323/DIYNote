@@ -39,13 +39,13 @@ nav {
   font-weight: bold;
   font-size: 30px;
   color: black;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 .logo-image {
   width: 40px;
   padding-bottom: 1px;
   margin-left: 20px;
-  margin-top: 10px;
+  margin-top: 4px; 
 }
 #center-links {
   display: flex;
@@ -88,7 +88,7 @@ nav {
   height: 30px;
   /* width: 300px; */
   font-size: larger;
-  gap: 5px; 
+  gap: 10px; 
 }
 .session-links-b {
   display: inline-flex;
@@ -116,6 +116,7 @@ a {
 }
 .logout {
   border: none;
+  /* border-radius: 5px; */
   background: none;
   color: black;
   font-size: 25px;
@@ -167,10 +168,13 @@ a {
   /* margin-right: 20px; */
   background-color: #1fb655;
   border: 1px solid #1fb655;
+  color: whitesmoke;
+  border-radius: 5px;
 }
 .logout-btn:hover {
   background-color: #21dc62;
   border: 1px solid #21dc62;
+  color: black; 
 }
 a.nav-butt:hover {
   background-color: #21dc62;

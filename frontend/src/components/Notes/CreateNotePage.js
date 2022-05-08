@@ -46,24 +46,26 @@ function CreateNotePage ({showModal, setShowModal, notebookId}) {
             </ul>
             <div className="note-create-form">
                 <label className='create-note-label'>
-                    Title
+                    {/* Title */}
                     <input
                         className='create-note-input'
                         type="text"
                         name='title'
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                        placeholder='Title'
                     />
                 </label>
 
                 <label className='create-note-label'>
-                    Content
+                    {/* Content */}
                     <textarea
                         className='create-note-text'
                         type="text"
                         name='content'
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
+                        placeholder='Enter note content here...'
                     />
                 </label>
                 <button className='create-note-submit' type="submit">Submit</button>

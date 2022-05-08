@@ -19,9 +19,11 @@ const NoteDeleteConfirm = ({ showModal, noteId, userId, notebookId }) => {
   };
 
   return (
-    <div className="upload-form">
-      Do you really want to delete this note?
-      <button type="submit" onClick={deleteCurrentNote}>
+    <div className="note-delete-form">
+      <h4 className="warning-message">
+        Do you really want to delete this note?
+      </h4>
+      <button className="yes-button" type="submit" onClick={deleteCurrentNote}>
         Yes
       </button>
     </div>

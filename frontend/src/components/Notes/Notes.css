@@ -2,39 +2,53 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
   position: relative;
   top: 80px;
-  bottom: 20%; 
-  left: 10%; 
+  bottom: 20%;
+  left: 10%;
   height: fit-content;
   width: 100%;
-  margin-top: 30px; 
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
 .add-btn {
-    margin: 10px;
-    background-color: #1fb655;
-    border: 1px solid #1fb655;
-    cursor: pointer;
-    color: black;
-    padding: 10px;
-    border-radius: 3px;
-    width: 300px;
-    transition-duration: 0.2s;
-  }
+  margin: 10px;
+  background-color: #1fb655;
+  border: 1px solid #1fb655;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 3px;
+  width: 300px;
+  transition-duration: 0.2s;
+  margin-left: 0;
+  margin-top: 30px;
+}
 
-  h2.user-notes {
-    bottom: 2px solid black;
-    padding: 20px;
-  }
+button.add-btn:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+  color: black; 
+}
+
+h2.user-notes {
+  bottom: 2px solid black; 
+  font-size: 20px;
+  margin-top: 20px;
+  border: 2px solid #1fb655;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%; 
+  margin-bottom: 20px;
+}
 button.create-btn {
   margin: 10px;
   background-color: #1fb655;
   border: none;
   cursor: pointer;
-  color: black;
+  color: whitesmoke;
   padding: 10px;
   border-radius: 5px;
   width: auto;
@@ -44,4 +58,173 @@ button.create-btn {
 button.create-btn:hover {
   background-color: #21dc62;
   border: 1px solid #21dc62;
+  color: black; 
+}
+div.note-detail {
+  font-size: 15px;
+  border-bottom: #1fb655 solid;
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+}
+div.note-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; 
+  margin-top: 0; 
+  padding-top: 0; 
+}
+div.note-detail-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  padding: 10px; 
+}
+h4.note-content {
+  font-size: 14px; 
+}
+h3.note-title {
+  margin-top: 10px; 
+  margin-bottom: 0; 
+}
+.create-note-form {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+}
+h2.create-note-title {
+  background-color: #efd76c; 
+  padding: 10px;
+}
+div.note-create-form {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+input.create-note-input {
+  /* background-color: #FDEFB3;
+  border-radius: 5px;
+  padding: 10px; */
+  border: 1px solid; 
+}
+label.create-note-label {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+}
+.create-note-text {
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+  width: 170%;
+  border: solid, black;
+}
+button.create-note-submit {
+  margin: 10px;
+  background-color: #1fb655;
+  border: none;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+  width: auto;
+  transition-duration: 0.2s;
+  font-weight: bold;
+  margin-left: 130px; 
+}
+button.create-note-submit:hover {
+  color: black; 
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+}
+.edit-note-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    top: 80px;
+    bottom: 20%;
+    left: 10%;
+    height: fit-content;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+h2.edit-note-title {
+  margin: 20px 
+}
+div.note-edit-form {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+div.update-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 20px;
+  gap: 10px; 
+  background-color: #efd76c;
+}
+
+input.edit-note-input {
+  border: 1px solid; 
+  margin-left: 30px;
+  width: 500px;
+}
+.edit-note-text {
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-top: 10px; 
+  width: 500px;
+  border: solid, black;
+}
+label.edit-note-label {
+  background-color: #efd76c; 
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-self: center;
+}
+button.edit-note-submit {
+  margin: 10px;
+  background-color: #1fb655;
+  border: 1px solid #1fb655;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 3px;
+  width: 300px;
+  transition-duration: 0.2s;
+  margin-left: 0;
+  margin-top: 30px;
+}
+button.edit-note-submit:hover {
+  background-color: #21dc62;
+  border: 1px solid #21dc62;
+  color: black; 
+}
+h1.your-notes-title {
+  margin-left: 4px;
+  margin-bottom: 20px;
+}
+h2.notes-count {
+  margin: 20px 10px; 
+  font-size: 20px;
+  margin-left: 0; 
 }

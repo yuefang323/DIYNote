@@ -1,6 +1,6 @@
 .demo-user-button {
   cursor: pointer;
-  color: black;
+  color: whitesmoke;
   padding: 10px;
   border-radius: 3px;
   width: 300px;
@@ -12,6 +12,7 @@
 .demo-user-button:hover {
   background-color: #041490ce;
   border: 1px solid #041490ce;
+  columns: black;
 }
 
 .demo-user-button:hover {
