@@ -53,5 +53,10 @@ Welcome to check out a live version of DIYnote here: [diynote.com](https://diyno
 
 # Splash Page & User Authentication
 A user can sign up or log in with an existing account in this page. Alternatively, a user can explore the web as a Demo user. 
-![Splash Page]
-![Demo Login]
+
+![Splash Page](./imgs/splash.png)
+![Demo Login](./imgs/demo-login.png)
+
+# User Home Page
+Once a user logged in, he/she can see two links on the home page main body. One is linked to all his/her notebooks and the other is linked to all his/her notes. On the navigation bar, 3 links allow a user to swith the view page among home, notebooks and notes pages. 
+
