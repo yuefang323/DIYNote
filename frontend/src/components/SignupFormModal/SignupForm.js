@@ -31,9 +31,9 @@ function SignupFormPage() {
     <form onSubmit={handleSubmit}>
       <img src="/favicon.png" alt="DIYnote"></img>
       <h3>Welcome to DIYnote</h3>
-      <ul>
+      <ul className="errors">
         {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
+          <li key={idx} className="errors">{error}</li>
         ))}
       </ul>
       <input
@@ -41,24 +41,28 @@ function SignupFormPage() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email Address"
+        required
       />
       <input
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Username"
+        required
       />
       <input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
+        required
       />
       <input
         type="password"
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
         placeholder="Confirmed Password"
+        required
       />
       <button className="signup-btn" type="submit">Sign Up</button>
     </form>
