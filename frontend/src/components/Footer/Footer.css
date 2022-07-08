@@ -9,18 +9,14 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8f8f8;;
+    background-color: #f8f8f8;
     height: 5rem;
     flex-direction: column;
     cursor: default;
     padding: 5px 0;
-  }
-  
-  /* footer.logged-in-footer {
-    height: 3rem;
-  } */
-  
-  .foot-stuff {
+}
+
+.foot-tech {
     display: flex;
     padding: 10px 24px;
     justify-content: space-around;
@@ -29,43 +25,49 @@ footer {
     border-bottom: 2px solid #49514932;
     min-width: 550px;
     font-size: 13px;
-  }
-  
-  .foot-stuff li {
+}
+
+.foot-stuff {
     color: var(--soft-white);
     font-size: 12px;
-  }
-  
-  ul.footer-about-me {
+}
+
+ul.footer-about-me {
     display: flex;
     padding: 10px;
     padding-bottom: 0;
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    font-size: 12px; 
-    color: rgb(135, 119, 153); 
-  }
-  
-  .fa-github {
+    font-size: 12px;
+    color: rgb(135, 119, 153);
+}
+
+.fa-github,
+.fa-linkedin {
     font-size: 18px;
     transition-duration: 0.2s;
-  }
-  
-  .fa-github:hover {
-    color: #1FB655;
-    transform: scale(1.4);
-  }
-  
-  .footer-text {
+}
+
+.fa-github:hover,
+.fa-linkedin:hover {
+    color: #1fb655;
+    transform: scale(1.05);
+}
+
+.footer-text {
     transition-duration: 0.2s;
-  }
-  
-  .footer-text:hover {
-    color: #1FB655;
+}
+
+.footer-text:hover {
+    color: #1fb655;
     transform: scale(1.1);
-  }
-  a.DIY-text:hover {
+}
+a.DIY-text:hover {
     background-color: transparent;
-    transform: scale(2.0);
-  }
+    transform: scale(2);
+}
+.tech-used:hover {
+    cursor: pointer;
+    background-color: transparent;
+}
