@@ -11,6 +11,7 @@ html {
     list-style-type: none;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f8f8f8;
+    overflow-wrap: break-word;
 }
 
 button,

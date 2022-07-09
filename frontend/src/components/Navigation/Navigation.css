@@ -56,14 +56,15 @@ nav {
 .session-links-a {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: auto;
     justify-content: center;
     position: absolute;
     top: 10px;
     bottom: 50%;
-    right: 40px;
+    right: -50px;
     height: 30px;
     font-size: larger;
+    z-index: 10;
 }
 .session-links-b {
     display: flex;
@@ -84,7 +85,6 @@ a {
 }
 .logout {
     border: none;
-    /* border-radius: 5px; */
     background: none;
     color: black;
     font-size: 25px;
@@ -97,7 +97,6 @@ a {
     cursor: pointer;
 }
 .fa-solid.fa-user.fa-2x {
-    /* background-color: #1fb655; */
     font-weight: 100px;
     border: none;
 }
@@ -114,10 +113,8 @@ a {
     right: 45px;
     top: 45px;
     border: 1px solid #91c1e5;
-    /* background-color: #1fb655; */
     border-radius: 4px;
     gap: 5px;
-    /* padding: 5px; */
     color: black;
     border: none;
     height: 30px;
@@ -130,7 +127,6 @@ a {
     margin: 10px;
 }
 .logout-btn {
-    /* margin-right: 20px; */
     background-color: #1fb655;
     border: 1px solid #1fb655;
     color: whitesmoke;
@@ -149,10 +145,17 @@ a.nav-butt:hover {
 }
 .nav-demo {
     font-size: 16px;
-    /* font-weight: 600; */
 }
 .nav-demo:hover {
     color: #21dc62;
     cursor: pointer;
     border-radius: 5px;
+}
+
+li.nav-butt {
+    border-right: solid;
+    border-color: grey;
+}
+li.nav-butt.my-notes {
+    border: none;
 }

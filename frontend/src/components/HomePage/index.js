@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink, Redirect } from "react-router-dom";
-// import Footer from "../Footer";
+import Footer from "../Footer";
 
 import "./HomePage.css";
 
@@ -30,7 +30,7 @@ const HomePage = () => {
           </li>
         </ul>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

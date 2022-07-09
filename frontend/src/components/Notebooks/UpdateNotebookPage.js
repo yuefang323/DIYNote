@@ -1,22 +1,17 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory, useParams } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "./Notebooks.css";
 
 import * as notebookActions from "../../store/notebook";
 
-function UpdateNotebookPage({ showModal, setShowModal, notebookId }) {
+function UpdateNotebookPage({ setShowModal, notebookId }) {
   const dispatch = useDispatch();
-  const history = useHistory();
-
   const sessionUser = useSelector((state) => state.session.user);
-  const userId = sessionUser.id;
-  // const updatedNotebookId = await dispatch(deleteNotebookThunk(notebookId));
+  const notebooks = useSelector(state => state.notebooks);
+  const oldInputVal = notebooks[notebookId].name
 
-  // const { notebookId }= useParams();
-  // console.log(useParams(), ".........xxxx");
-  // console.log("xxxxxx", notebookId);
-  const [inputVal, setInputVal] = useState("");
+  const [inputVal, setInputVal] = useState(oldInputVal);
   const [errors, setErrors] = useState([]);
 
   if (!sessionUser) return <Redirect to="/signup" />;
@@ -29,7 +24,6 @@ function UpdateNotebookPage({ showModal, setShowModal, notebookId }) {
       setErrors(validateErrors);
       return;
     }
-    // console.log('///////////', notebookId)
     dispatch(notebookActions.updateNotebookThunk(notebookId, inputVal));
     setShowModal(false);
   };
@@ -37,7 +31,7 @@ function UpdateNotebookPage({ showModal, setShowModal, notebookId }) {
     <form onSubmit={handleSubmit} className="update-notebook-form">
       <h2 className="update-notebook-name">Update a notebook</h2>
       <ul className="update-notebook-errors">
-        {errors && errors.map((error) => <li key={error}>{error}</li>)}
+        {errors && errors.map((error) => <li key={error} className="errors notebook">{error}</li>)}
       </ul>
       <div className="notebook-update-form">
         <label className="update-notebook-label">
@@ -47,7 +41,6 @@ function UpdateNotebookPage({ showModal, setShowModal, notebookId }) {
             name="name"
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
-            placeholder='Enter a new name here...'
           />
         </label>
         <button className="update-notebook-submit" type="submit">
