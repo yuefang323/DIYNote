@@ -15,6 +15,7 @@ const Footer = () => {
                         href="https://www.javascript.com/"
                         target="_blank"
                         className="tech-used"
+                        rel="noreferrer"
                     >
                         Javascript
                     </a>
@@ -23,6 +24,7 @@ const Footer = () => {
                         href="https://reactjs.org/"
                         target="_blank"
                         className="tech-used"
+                        rel="noreferrer"
                     >
                         React
                     </a>
@@ -31,6 +33,7 @@ const Footer = () => {
                         href="https://redux.js.org/"
                         target="_blank"
                         className="tech-used"
+                        rel="noreferrer"
                     >
                         Redux
                     </a>
@@ -39,6 +42,7 @@ const Footer = () => {
                         href="https://developer.mozilla.org/en-US/docs/Web/HTML"
                         target="_blank"
                         className="tech-used"
+                        rel="noreferrer"
                     >
                         HTML5
                     </a>
@@ -47,6 +51,7 @@ const Footer = () => {
                         href="https://developer.mozilla.org/en-US/docs/Web/CSS"
                         target="_blank"
                         className="tech-used"
+                        rel="noreferrer"
                     >
                         CSS3
                     </a>
@@ -55,6 +60,7 @@ const Footer = () => {
                         href="https://sequelize.org/"
                         target="_blank"
                         className="tech-used"
+                        rel="noreferrer"
                     >
                         Sequelize
                     </a>
@@ -63,6 +69,7 @@ const Footer = () => {
                         href="https://expressjs.com/"
                         target="_blank"
                         className="tech-used"
+                        rel="noreferrer"
                     >
                         Express
                     </a>
@@ -71,6 +78,7 @@ const Footer = () => {
                         href="https://www.postgresql.org/"
                         target="_blank"
                         className="tech-used"
+                        rel="noreferrer"
                     >
                         PostgreSQL
                     </a>

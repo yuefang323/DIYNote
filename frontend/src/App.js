@@ -8,7 +8,6 @@ import HomePage from "./components/HomePage";
 import Notebooks from "./components/Notebooks";
 import Notes from "./components/Notes";
 import AllNotes from "./components/Notes/GetAllNotes";
-import UpdateNotePage from "./components/Notes/UpdateNotePage";
 import ErrorPage from "./components/ErrorPage";
 
 function App() {
@@ -40,9 +39,6 @@ function App() {
           <Route path="/notebooks/:notebookId">
             <Notes />
           </Route>
-          {/* <Route path="/notes/:noteId">
-            <UpdateNotePage />
-          </Route> */}
           <Route>
             <ErrorPage />
           </Route>
