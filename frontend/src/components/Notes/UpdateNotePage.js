@@ -55,7 +55,9 @@ function UpdateNotePage({ setShowModal, noteId }) {
                 // history.push(`/users/${userId}/notes`);
                 // history.goBack();
                 setShowModal(false);
-            }
+            } 
+        } else {
+            setShowModal(false);
         }
     };
 
