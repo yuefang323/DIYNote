@@ -18,7 +18,7 @@ const DemoUser = () => {
 
   return (
     <button className="demo-user-button" onClick={loginDemo}>
-      Demo User
+      Demo Login
     </button>
   );
 }

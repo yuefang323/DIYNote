@@ -27,9 +27,9 @@ function LoginForm() {
         <img src="/favicon.png" alt="DIYnote"></img>
         <h3>Welcome to DIYnote</h3>
       </div>
-      <ul>
+      <ul className="errors">
         {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
+          <li key={idx} className="errors">{error}</li>
         ))}
       </ul>
       <div>
@@ -38,6 +38,7 @@ function LoginForm() {
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           placeholder="Username/Email"
+          required
         />
       </div>
       <div>
@@ -46,6 +47,7 @@ function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
+          required
         />
       </div>
         <button type="submit" className="login-button">
