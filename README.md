@@ -71,7 +71,7 @@ A user can read all his notebooks on this page. He can also create, update and d
 ## User Notes Page
 A user can read all his notes on this page. He can also create, update and delete a specific note on this page. In particular, if he does not want to put a note in a notebook, he can manage that note on this page. 
 
-![MyNotes Page](./imgs/my-notes.png)
+![MyNotes Page](https://user-images.githubusercontent.com/94598069/178328384-c944d490-3073-4a58-97f7-2ccbbf595087.jpg)
 
 ## 404 Error Page 
 If a user unaccidently accesses a path that is not exist or cannot be accessed because he is not a login user, the 404 Error Page will be rendered. It will automatically redirect the user to the previous page or login page. 
