@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { navLink } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "./SignupForm.css";
 
@@ -71,13 +70,13 @@ function SignupFormPage({ setSignupModal }) {
                 <button className="signup-btn" type="submit">
                     Sign Up
                 </button>
-                <button
-                    className="signup-btn"
+                <div
+                    className="switch-to-login"
                     type="button"
                     onClick={() => setSignupModal(false)}
                 >
-                    Login
-                </button>
+                    Already have an account? Log in
+                </div>
             </form>
         </>
     );

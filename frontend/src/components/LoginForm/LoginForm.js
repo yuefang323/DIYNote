@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import DemoUser from "../DemoUser";
 import "./LoginForm.css";
 
-function LoginForm() {
+function LoginForm({ setSignupModal }) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
@@ -54,6 +54,13 @@ function LoginForm() {
           Log In
         </button>
         <DemoUser />
+        <div
+                    className="switch-to-signup"
+                    type="button"
+                    onClick={() => setSignupModal(true)}
+                >
+                    Don't have an account? Create account
+                </div>
     </form>
   );
 }

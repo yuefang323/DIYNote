@@ -20,7 +20,7 @@
 }
 
 .login-button:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
   cursor: pointer;
 }
 
@@ -54,4 +54,12 @@ form {
 input {
   margin: 10px;
   min-width: 300px;
+}
+.switch-to-signup {
+    margin: 20px; 
+}
+.switch-to-signup:hover {
+    color: #1fb655;
+    transform: scale(1.03);
+    cursor: pointer;
 }
