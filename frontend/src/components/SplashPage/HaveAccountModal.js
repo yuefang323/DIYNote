@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-import LoginForm from "../LoginFormModal/LoginForm";
+import LoginForm from "../LoginForm/LoginForm";
 
-import '../LoginFormModal/LoginForm.css'
+import '../LoginForm/LoginForm.css'
 
 
 function HaveAccountModal() {
