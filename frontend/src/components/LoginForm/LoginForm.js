@@ -25,7 +25,7 @@ function LoginForm({ setSignupModal }) {
     <form onSubmit={handleSubmit}>
       <div>
         <img src="/favicon.png" alt="DIYnote"></img>
-        <h3>Welcome to DIYnote</h3>
+        <h3 className="welcome-msg">Welcome to DIYnote</h3>
       </div>
       <ul className="errors">
         {errors.map((error, idx) => (
@@ -59,7 +59,7 @@ function LoginForm({ setSignupModal }) {
                     type="button"
                     onClick={() => setSignupModal(true)}
                 >
-                    Don't have an account? Create account
+                    Don't have an account? <span>Create account</span>
                 </div>
     </form>
   );

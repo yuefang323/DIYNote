@@ -31,7 +31,7 @@ function SignupFormPage({ setSignupModal }) {
         <>
             <form onSubmit={handleSubmit}>
                 <img src="/favicon.png" alt="DIYnote"></img>
-                <h3>Welcome to DIYnote</h3>
+                <h3 className="welcome-msg">Welcome to DIYnote</h3>
                 <ul className="errors">
                     {errors.map((error, idx) => (
                         <li key={idx} className="errors">
@@ -75,7 +75,7 @@ function SignupFormPage({ setSignupModal }) {
                     type="button"
                     onClick={() => setSignupModal(false)}
                 >
-                    Already have an account? Log in
+                    Already have an account? <span>Log in</span>
                 </div>
             </form>
         </>

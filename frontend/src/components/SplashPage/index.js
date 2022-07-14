@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Footer from "../Footer";
-// import HaveAccountModal from "./HaveAccountModal";
-// import SignupFreeModal from "./SignUpFreeModal";
 import laptop from "../../Assets/laptop.png";
 import { Modal } from "../../context/Modal";
 import SignupFormPage from "../SignupForm/SignupForm";

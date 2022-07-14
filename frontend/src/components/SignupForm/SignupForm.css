@@ -59,3 +59,10 @@ input {
     transform: scale(1.03);
     cursor: pointer;
 }
+.welcome-msg {
+    font-family: Mulish,sans-serif;
+}
+span {
+    font-weight: 800;
+    color: #1fb655;
+}
