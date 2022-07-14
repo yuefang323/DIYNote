@@ -105,27 +105,6 @@ a {
     color: #1fb655;
     cursor: pointer;
 }
-
-.profile-dropdown {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    right: 45px;
-    top: 45px;
-    border: 1px solid #91c1e5;
-    border-radius: 4px;
-    gap: 5px;
-    color: black;
-    border: none;
-    height: 30px;
-    margin-bottom: 10px;
-    border-radius: 2px;
-}
-.profile-dropdown li button {
-    width: 100%;
-    padding: 5px;
-    margin: 10px;
-}
 .logout-btn {
     background-color: #1fb655;
     border: 1px solid #1fb655;
@@ -157,5 +136,37 @@ li.nav-butt {
     border-color: grey;
 }
 li.nav-butt.my-notes {
+    border: none;
+}
+.profile-dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* right: 10px; */
+    top: 55px;
+    /* border: 20px solid red; 
+    border-radius: 4px; */
+    gap: 5px;
+    color: black;
+    border: none;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    /* background-color: black; */
+}
+.profile-dropdown-list {
+    background-color: #FFCF79;
+    padding: 5px;
+    border-radius: 5px;
+    /* border: 2px solid #92CD00;  */
+}
+.profile-dropdown-list.item {
+    border: none; 
+    font-family: Mulish,sans-serif;
+}
+.profile-dropdown-list button {
+    width: 100%;
+    padding: 5px;
+    background-color: orange;
     border: none;
 }
