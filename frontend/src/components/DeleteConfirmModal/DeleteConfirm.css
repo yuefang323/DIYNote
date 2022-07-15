@@ -41,7 +41,7 @@ div.notebook-delete-form {
     font-weight: 500;
     font-size: 16px;
     margin-bottom: 10px;
-    height: 200px;
+    height: fit-content;
     width: 200px;
     padding: 10px;
     border-radius: 5px;
@@ -61,6 +61,11 @@ button.yes-button {
     margin-top: 10px;
     color: red;
     font-weight: bold;
+}
+.yes-button:hover {
+    color: white; 
+    transform: scale(1.05);
+    background-color: #FFCC00;
 }
 div#modal-content {
     background-color: #efd76c;

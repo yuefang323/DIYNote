@@ -142,23 +142,18 @@ li.nav-butt.my-notes {
     position: absolute;
     display: flex;
     flex-direction: column;
-    /* right: 10px; */
     top: 55px;
-    /* border: 20px solid red; 
-    border-radius: 4px; */
     gap: 5px;
     color: black;
     border: none;
     height: 100px;
     margin-bottom: 10px;
     border-radius: 2px;
-    /* background-color: black; */
 }
 .profile-dropdown-list {
-    background-color: #FFCF79;
     padding: 5px;
     border-radius: 5px;
-    /* border: 2px solid #92CD00;  */
+    background-color: #FFCC00;
 }
 .profile-dropdown-list.item {
     border: none; 
@@ -170,3 +165,6 @@ li.nav-butt.my-notes {
     background-color: orange;
     border: none;
 }
+/* .profile-dropdown-list button:hover {
+    background-color: #FFCC00;
+} */
