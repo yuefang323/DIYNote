@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import DemoUser from "../DemoUser";
 import "./LoginForm.css";
 
-function LoginForm() {
+function LoginForm({ setSignupModal }) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +25,7 @@ function LoginForm() {
     <form onSubmit={handleSubmit}>
       <div>
         <img src="/favicon.png" alt="DIYnote"></img>
-        <h3>Welcome to DIYnote</h3>
+        <h3 className="welcome-msg">Welcome to DIYnote</h3>
       </div>
       <ul className="errors">
         {errors.map((error, idx) => (
@@ -54,6 +54,13 @@ function LoginForm() {
           Log In
         </button>
         <DemoUser />
+        <div
+                    className="switch-to-signup"
+                    type="button"
+                    onClick={() => setSignupModal(true)}
+                >
+                    Don't have an account? <span>Create account</span>
+                </div>
     </form>
   );
 }

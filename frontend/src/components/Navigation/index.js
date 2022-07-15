@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { Modal } from "../../context/Modal";
 
 import ProfileButton from "./ProfileButton";
-import LoginFormModal from "../LoginFormModal";
-import SignupFormModal from "../SignupFormModal";
+import SignupFormPage from "../SignupForm/SignupForm";
+import LoginForm from "../LoginForm/LoginForm";
 import logo from "../../Assets/logo.png";
 import * as sessionActions from "../../store/session";
+import "../LoginForm/LoginForm.css";
+import "../SignupForm/SignupForm.css";
 
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
+    const [signupModal, setSignupModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
     const sessionUser = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
     const loginDemo = (e) => {
@@ -59,14 +64,37 @@ function Navigation({ isLoaded }) {
         sessionLinks = (
             <>
                 <div id="signup">
-                    <SignupFormModal />
+                    <button
+                        id="signup-modal"
+                        onClick={() => {
+                            setShowModal(true);
+                            setSignupModal(true);
+                        }}
+                    >
+                        Sign Up
+                    </button>
                 </div>
                 <div className="nav-demo" onClick={loginDemo}>
-                        Demo Login
+                    Demo Login
                 </div>
                 <div id="login">
-                    <LoginFormModal className="login-modal" />
+                    <button
+                        id="login-modal"
+                        onClick={() => {
+                            setShowModal(true);
+                            setSignupModal(false);
+                        }}
+                    >
+                        Log In
+                    </button>
                 </div>
+
+                {showModal && (
+                    <Modal onClose={() => setShowModal(false)}>
+                        {signupModal && <SignupFormPage setSignupModal={setSignupModal} />}
+                        {!signupModal && <LoginForm setSignupModal={setSignupModal} />}
+                    </Modal>
+                )}
             </>
         );
     }

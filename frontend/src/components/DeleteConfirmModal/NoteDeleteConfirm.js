@@ -1,15 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { deleteNoteThunk } from "../../store/note";
 
-const NoteDeleteConfirm = ({ showModal, noteId, userId, notebookId }) => {
+const NoteDeleteConfirm = ({ showModal, noteId }) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  // const { notebookId } = useParams();
-  // console.log("/////", noteId);
-  // console.log("..........", notebookId);
   const deleteCurrentNote = async () => {
     const deletedNoteId = await dispatch(deleteNoteThunk(noteId));
     if (deletedNoteId) {
@@ -18,6 +15,10 @@ const NoteDeleteConfirm = ({ showModal, noteId, userId, notebookId }) => {
     }
   };
 
+  const notDeleteCurNote = async () => {
+    showModal(false)
+  }
+
   return (
     <div className="note-delete-form">
       <h4 className="warning-message">
@@ -25,6 +26,9 @@ const NoteDeleteConfirm = ({ showModal, noteId, userId, notebookId }) => {
       </h4>
       <button className="yes-button" type="submit" onClick={deleteCurrentNote}>
         Yes
+      </button>
+      <button className="yes-button" type="submit" onClick={notDeleteCurNote}>
+        No
       </button>
     </div>
   );

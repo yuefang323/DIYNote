@@ -1,0 +1,68 @@
+.signup-btn {
+    cursor: pointer;
+    background-color: #1fb655;
+    border: none;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    margin-top: 10px;
+    transition-duration: 0.2s;
+}
+
+.signup-btn:hover {
+    background-color: #21dc62;
+    border: 1px solid #21dc62;
+    transform: scale(1.02);
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 350px;
+    min-width: 400px;
+}
+input {
+    margin: 10px;
+}
+
+#signup-modal {
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    background: none;
+    color: #f8f8f8;
+    background-color: #1fb655;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 6px;
+}
+
+#signup-modal:hover {
+    color: black;
+    background-color: #21dc62;
+}
+.switch-to-login {
+    margin: 15px; 
+}
+.switch-to-login:hover {
+    color: #1fb655;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.welcome-msg {
+    font-family: Mulish,sans-serif;
+}
+span {
+    font-weight: 800;
+    color: #1fb655;
+}

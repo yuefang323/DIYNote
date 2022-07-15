@@ -37,6 +37,7 @@ li.my-notes-link {
 }
 .home-heading {
     margin-bottom: 10px;
+    font-family: Mulish,sans-serif;
 }
 p.my-notes-link:hover {
     border: #21dc62;
