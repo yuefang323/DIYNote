@@ -1,9 +1,16 @@
 "use strict";
 
+// NEW: add this code to each migration file
+let options = {};
+if (process.env.NODE_ENV === 'production') {
+  options.schema = process.env.SCHEMA;  // define your schema in options object
+};
+// END of new code
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert(
-      "Notebooks",
+    options.tableName = 'Notebooks'; 
+    return queryInterface.bulkInsert(options,
       [
         {
           name: "DIY Dress",
@@ -35,6 +42,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("Notebooks", null, {});
+    options.tableName = 'Notebooks';
+    return queryInterface.bulkDelete(options, null, {});
   },
 };
