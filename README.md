@@ -2,7 +2,7 @@
 
 DIYnote, inspired by [Evernote](https://evernote.com/), is a website where users can take notes and categorize notes by using notebooks. 
 
-Welcome to check out a live version of DIYnote here: [diynote.com](https://diynote.herokuapp.com/)
+Welcome to check out a live version of DIYnote here: [diynote.com](https://diynote.onrender.com)
 
 - [Database Schema](https://github.com/yuefang323/DIYnote/wiki/Database-Schema)
 
